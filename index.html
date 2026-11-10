@@ -1,3219 +1,420 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Karli Macrides — Finance student and financial analyst intern with experience in financial analysis, accounting, lending, bid administration, HR, and digital media." name="description"/>
-<title>Karli Macrides | Finance Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karli Macrides | Portfolio</title>
+<meta name="description" content="Karli Macrides: finance student at Binghamton University. Financial analysis, process improvement and AI-built tools.">
+<meta property="og:title" content="Karli Macrides | Portfolio">
+<meta property="og:description" content="Finance student at Binghamton University. Financial analysis, process improvement and AI-built tools.">
+<meta property="og:image" content="assets/karli-portrait.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;family=Pinyon+Script&amp;display=swap" rel="stylesheet">
 <style>
-    :root {
-      --navy: #0f2742;
-      --blue: #1f5f99;
-      --light-blue: #eaf3fa;
-      --cream: #f8f7f3;
-      --white: #ffffff;
-      --text: #1c2530;
-      --muted: #607080;
-      --line: #dce5ec;
-      --shadow: 0 18px 45px rgba(15, 39, 66, 0.10);
-      --radius: 18px;
-      --max-width: 1120px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background: var(--cream);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    .button {
-      font: inherit;
-    }
-
-    .container {
-      width: min(calc(100% - 40px), var(--max-width));
-      margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(248, 247, 243, 0.94);
-      border-bottom: 1px solid rgba(220, 229, 236, 0.8);
-      backdrop-filter: blur(14px);
-    }
-
-    nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-
-    .brand {
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: var(--navy);
-      font-size: 1.1rem;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      color: var(--muted);
-      font-size: 0.94rem;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover {
-      color: var(--blue);
-    }
-
-    .hero {
-      padding: 88px 0 72px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 520px;
-      height: 520px;
-      right: -180px;
-      top: -230px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(31, 95, 153, 0.16), rgba(31, 95, 153, 0));
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.45fr 0.75fr;
-      align-items: center;
-      gap: 58px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 13px;
-      border: 1px solid #cbddea;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.75);
-      color: var(--blue);
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      background: var(--blue);
-      border-radius: 50%;
-    }
-
-    h1 {
-      color: var(--navy);
-      font-size: clamp(3rem, 7vw, 5.7rem);
-      line-height: 0.96;
-      letter-spacing: -0.065em;
-      max-width: 790px;
-    }
-
-    .hero-subtitle {
-      margin-top: 28px;
-      max-width: 720px;
-      font-size: clamp(1.05rem, 2vw, 1.28rem);
-      color: var(--muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 20px;
-      border-radius: 12px;
-      font-weight: 750;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-      border: 1px solid transparent;
-      cursor: pointer;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .button.primary {
-      color: white;
-      background: var(--navy);
-      box-shadow: 0 12px 26px rgba(15, 39, 66, 0.18);
-    }
-
-    .button.secondary {
-      color: var(--navy);
-      background: white;
-      border-color: var(--line);
-    }
-
-    .profile-card {
-      background: var(--navy);
-      color: white;
-      border-radius: 28px;
-      padding: 34px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .profile-card::after {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      right: -55px;
-      bottom: -75px;
-      background: rgba(255,255,255,0.08);
-    }
-
-    .monogram {
-      width: 82px;
-      height: 82px;
-      border-radius: 22px;
-      display: grid;
-      place-items: center;
-      background: white;
-      color: var(--navy);
-      font-size: 1.7rem;
-      font-weight: 900;
-      letter-spacing: -0.05em;
-      margin-bottom: 28px;
-    }
-
-    .profile-card h2 {
-      font-size: 1.45rem;
-      margin-bottom: 6px;
-    }
-
-    .profile-card p {
-      color: #d9e5ee;
-    }
-
-    .quick-facts {
-      display: grid;
-      gap: 18px;
-      margin-top: 30px;
-    }
-
-    .fact-label {
-      display: block;
-      color: #a9bfd0;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 800;
-    }
-
-    .fact-value {
-      font-weight: 700;
-      margin-top: 3px;
-    }
-
-    section {
-      padding: 76px 0;
-    }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: 0.55fr 1.45fr;
-      gap: 40px;
-      align-items: start;
-      margin-bottom: 38px;
-    }
-
-    .section-number {
-      color: var(--blue);
-      font-size: 0.82rem;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding-top: 8px;
-    }
-
-    .section-heading h2 {
-      color: var(--navy);
-      font-size: clamp(2rem, 4vw, 3.15rem);
-      letter-spacing: -0.045em;
-      line-height: 1.06;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      margin-top: 14px;
-      max-width: 760px;
-    }
-
-    .about-card {
-      background: white;
-      padding: 34px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 30px rgba(15, 39, 66, 0.05);
-      font-size: 1.04rem;
-    }
-
-    .experience-list {
-      display: grid;
-      gap: 18px;
-    }
-
-    .experience-card {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 34px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .experience-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-    }
-
-    .experience-meta {
-      color: var(--muted);
-      font-size: 0.93rem;
-    }
-
-    .experience-meta strong {
-      color: var(--blue);
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .experience-card h3 {
-      color: var(--navy);
-      font-size: 1.25rem;
-      margin-bottom: 2px;
-    }
-
-    .company {
-      color: var(--muted);
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    .experience-card ul {
-      padding-left: 19px;
-      color: #455463;
-    }
-
-    .experience-card li + li {
-      margin-top: 8px;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .skill-card {
-      background: var(--light-blue);
-      border: 1px solid #cfe1ee;
-      border-radius: var(--radius);
-      padding: 28px;
-    }
-
-    .skill-card h3 {
-      color: var(--navy);
-      margin-bottom: 14px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .tag {
-      background: white;
-      border: 1px solid #d5e3ec;
-      border-radius: 999px;
-      padding: 7px 11px;
-      font-size: 0.86rem;
-      font-weight: 700;
-      color: #38546b;
-    }
-
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .info-card {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-    }
-
-    .info-card h3 {
-      color: var(--navy);
-      margin-bottom: 5px;
-      font-size: 1.18rem;
-    }
-
-    .info-card .subline {
-      color: var(--blue);
-      font-weight: 750;
-      margin-bottom: 8px;
-    }
-
-    .info-card p {
-      color: var(--muted);
-    }
-
-    .leadership-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .leadership-item {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 22px 24px;
-    }
-
-    .leadership-item h3 {
-      color: var(--navy);
-      margin-bottom: 6px;
-    }
-
-    .contact-card {
-      background: var(--navy);
-      color: white;
-      border-radius: 28px;
-      padding: clamp(30px, 6vw, 62px);
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 36px;
-      align-items: center;
-    }
-
-    .contact-card h2 {
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 1.05;
-      letter-spacing: -0.045em;
-    }
-
-    .contact-card p {
-      color: #cbdbe7;
-      margin-top: 14px;
-      max-width: 640px;
-    }
-
-    .contact-links {
-      display: grid;
-      gap: 12px;
-    }
-
-    .contact-link {
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 13px;
-      padding: 14px 16px;
-      font-weight: 700;
-    }
-
-    .contact-link:hover {
-      background: rgba(255,255,255,0.14);
-    }
-
-    footer {
-      padding: 30px 0 42px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    @media (max-width: 850px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero-grid,
-      .section-heading,
-      .contact-card {
-        grid-template-columns: 1fr;
-      }
-
-      .profile-card {
-        max-width: 520px;
-      }
-
-      .experience-card {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-
-      .skills-grid,
-      .two-column,
-      .tool-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 64px;
-      }
-    }
-
-
-    .tool-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
-    .tool-card {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: 0 10px 30px rgba(15, 39, 66, 0.05);
-    }
-
-    .tool-card h3 {
-      color: var(--navy);
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-    }
-
-    .tool-card > p {
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .field-label {
-      display: block;
-      margin: 16px 0 7px;
-      color: var(--navy);
-      font-weight: 800;
-      font-size: 0.92rem;
-    }
-
-    textarea,
-    input[type="text"],
-    input[type="file"] {
-      width: 100%;
-      border: 1px solid #cfdce6;
-      background: #fbfdff;
-      border-radius: 12px;
-      padding: 13px 14px;
-      color: var(--text);
-      font: inherit;
-    }
-
-    textarea {
-      min-height: 190px;
-      resize: vertical;
-    }
-
-    textarea:focus,
-    input:focus {
-      outline: 3px solid rgba(31, 95, 153, 0.12);
-      border-color: var(--blue);
-    }
-
-    .helper-text {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 0.84rem;
-    }
-
-    .tool-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .result-box {
-      display: none;
-      margin-top: 20px;
-      padding: 20px;
-      border-radius: 14px;
-      background: var(--light-blue);
-      border: 1px solid #cfe1ee;
-    }
-
-    .result-box.visible {
-      display: block;
-    }
-
-    .result-box h4 {
-      color: var(--navy);
-      margin: 14px 0 7px;
-    }
-
-    .result-box ul {
-      padding-left: 19px;
-    }
-
-    .result-box li + li {
-      margin-top: 7px;
-    }
-
-    .match-score {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 92px;
-      height: 42px;
-      padding: 0 14px;
-      border-radius: 999px;
-      background: var(--navy);
-      color: white;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .answer-card {
-      background: white;
-      border: 1px solid #d5e3ec;
-      border-radius: 12px;
-      padding: 16px;
-      margin-top: 12px;
-      white-space: pre-wrap;
-    }
-
-    .copy-button {
-      margin-top: 12px;
-      border: 1px solid #c8d7e3;
-      background: white;
-      color: var(--navy);
-      padding: 9px 13px;
-      border-radius: 10px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .copy-button:hover {
-      background: #f4f8fb;
-    }
-
-
-    .dashboard-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 22px;
-    }
-
-    .dashboard-panel {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: 0 10px 30px rgba(15, 39, 66, 0.05);
-    }
-
-    .dashboard-panel h3 {
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-
-    .saved-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .saved-item {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 16px;
-      background: #fbfdff;
-    }
-
-    .saved-item strong {
-      color: var(--navy);
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .saved-item small {
-      color: var(--muted);
-    }
-
-    .saved-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .mini-button {
-      border: 1px solid #c8d7e3;
-      background: white;
-      color: var(--navy);
-      padding: 7px 10px;
-      border-radius: 9px;
-      font-weight: 750;
-      cursor: pointer;
-      font-size: 0.84rem;
-    }
-
-    .mini-button:hover {
-      background: #f4f8fb;
-    }
-
-    .danger-button {
-      color: #8b2635;
-    }
-
-    .empty-state {
-      color: var(--muted);
-      border: 1px dashed #c9d5df;
-      border-radius: 12px;
-      padding: 18px;
-      text-align: center;
-      margin-top: 14px;
-    }
-
-    .status-pill {
-      display: inline-block;
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: var(--light-blue);
-      color: var(--blue);
-      font-size: 0.76rem;
-      font-weight: 850;
-      margin-top: 7px;
-    }
-
-    @media (max-width: 850px) {
-      .dashboard-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media print {
-      header,
-      .hero-actions,
-      footer {
-        display: none;
-      }
-
-      body {
-        background: white;
-      }
-
-      section {
-        padding: 30px 0;
-      }
-
-      .experience-card,
-      .info-card,
-      .skill-card,
-      .about-card {
-        break-inside: avoid;
-        box-shadow: none;
-      }
-    }
-  </style>
-<style>
-:root{--paper:#f6f0e7;--ink:#211e1a;--cream:#fbf8f2;--muted:#746e66;--line:#2d2925}
-body{background:var(--paper)!important;color:var(--ink)!important;font-family:Georgia,"Times New Roman",serif!important;overflow-x:hidden}
-header{background:rgba(246,240,231,.94)!important;border-bottom:1px solid rgba(45,41,37,.25)!important}
-.brand,.nav-links a,.section-number{letter-spacing:.08em;text-transform:uppercase}
-h1,h2,h3{font-weight:500!important}
-h1{font-size:clamp(4rem,9vw,8rem)!important;line-height:.9!important;letter-spacing:-.05em!important}
-.script-word{display:block;font-family:"Brush Script MT","Segoe Script",cursive;font-size:.55em;font-weight:400;transform:rotate(-3deg);margin-bottom:8px}
-.button,.mini-button,.copy-button{border-radius:0!important;border:1px solid var(--line)!important;background:transparent!important;color:var(--ink)!important;text-transform:uppercase;letter-spacing:.07em}
-.button.primary{background:var(--ink)!important;color:var(--cream)!important}
-.profile-card,.about-card,.experience-card,.skill-card,.info-card,.leadership-item,.tool-card,.dashboard-panel,.saved-item,.contact-card{background:rgba(251,248,242,.78)!important;border:1px solid var(--line)!important;border-radius:0!important;box-shadow:8px 8px 0 rgba(45,41,37,.07)!important}
-.tag,.status-pill,input,textarea{border-radius:0!important}
-.staircase{position:absolute;right:-20px;top:100px;width:280px;height:760px;opacity:.45;pointer-events:none;z-index:0}
-.sketch-line{fill:none;stroke:var(--line);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.city-scene{position:relative;height:410px;overflow:hidden;border-top:1px solid var(--line);margin-top:40px}
-.city-scene>svg{width:100%;height:100%}
-.road{position:absolute;left:0;right:0;bottom:38px;height:2px;background:var(--line)}
-.car{position:absolute;bottom:40px;width:110px;height:48px;animation:drive 14s linear infinite}
-.car.two{animation-duration:18s;animation-delay:-7s;width:95px;bottom:48px}
-.car.three{animation-duration:22s;animation-delay:-14s;width:120px;bottom:44px}
-.car svg{width:100%;height:100%}
-@keyframes drive{from{transform:translateX(-160px)}to{transform:translateX(calc(100vw + 180px))}}
-@media(max-width:850px){.staircase{opacity:.2;right:-130px}.city-scene{height:330px}}
-@media(prefers-reduced-motion:reduce){.car{animation:none}}
+body{margin:0;background:#E5DFD7}
+a{color:#1C1B1A}a:hover{color:#5A544D}
+@keyframes kmDing{0%{opacity:0;transform:translateY(6px) scale(.8)}15%{opacity:1;transform:translateY(0) scale(1.08)}25%{transform:rotate(-6deg)}35%{transform:rotate(6deg)}45%{transform:rotate(-3deg)}55%{transform:rotate(0)}85%{opacity:1}100%{opacity:0;transform:translateY(-6px)}}
 </style>
-<style id="nyc-illustration-styles">
-  :root {
-    --nyc-ink: #24201c;
-    --nyc-paper: #f6efe5;
-    --nyc-rose: #c98783;
-  }
-
-  body {
-    position: relative;
-    overflow-x: hidden;
-    background:
-      radial-gradient(circle at 17px 19px, rgba(36,32,28,.45) 0 1px, transparent 1.3px) 0 0 / 155px 135px,
-      radial-gradient(circle at 70px 56px, rgba(36,32,28,.28) 0 1px, transparent 1.4px) 0 0 / 210px 190px,
-      var(--paper, var(--nyc-paper)) !important;
-  }
-
-  main, header, footer {
-    position: relative;
-    z-index: 3;
-  }
-
-  .nyc-illustration-layer {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    overflow: hidden;
-  }
-
-  .nyc-stars {
-    position: absolute;
-    inset: 0;
-    opacity: .72;
-  }
-
-  .nyc-stars span {
-    position: absolute;
-    color: var(--nyc-ink);
-    font-size: clamp(.65rem, 1.1vw, 1.2rem);
-    line-height: 1;
-  }
-
-  .nyc-stars .s1 { top: 1.3%; left: 4%; }
-  .nyc-stars .s2 { top: 3.2%; left: 22%; }
-  .nyc-stars .s3 { top: 5.8%; left: 58%; }
-  .nyc-stars .s4 { top: 8.5%; left: 71%; }
-  .nyc-stars .s5 { top: 12.3%; left: 12%; }
-  .nyc-stars .s6 { top: 17%; left: 64%; }
-  .nyc-stars .s7 { top: 23%; left: 6%; }
-  .nyc-stars .s8 { top: 29%; left: 74%; }
-  .nyc-stars .s9 { top: 38%; left: 17%; }
-  .nyc-stars .s10 { top: 46%; left: 67%; }
-  .nyc-stars .s11 { top: 58%; left: 8%; }
-  .nyc-stars .s12 { top: 66%; left: 76%; }
-  .nyc-stars .s13 { top: 77%; left: 13%; }
-  .nyc-stars .s14 { top: 86%; left: 72%; }
-
-  .nyc-right-building {
-    position: absolute;
-    top: 0;
-    right: -35px;
-    width: min(32vw, 420px);
-    height: 100%; min-height: 10000px;
-    opacity: .78;
-  }
-
-  .nyc-right-building svg,
-  .nyc-bottom-city svg {
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-  }
-
-  .nyc-line {
-    fill: none;
-    stroke: var(--nyc-ink);
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .nyc-fine {
-    fill: none;
-    stroke: var(--nyc-ink);
-    stroke-width: 1;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .nyc-bottom-city {
-    position: relative;
-    height: 560px;
-    margin-top: 30px;
-    z-index: 2;
-    overflow: hidden;
-    border-top: 1px solid rgba(36,32,28,.35);
-  }
-
-  .nyc-skyline {
-    position: absolute;
-    inset: 0 0 50px 0;
-  }
-
-  .nyc-road {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 44px;
-    height: 2px;
-    background: var(--nyc-ink);
-  }
-
-  .nyc-car {
-    position: absolute;
-    bottom: 46px;
-    width: 125px;
-    animation: nycDrive 17s linear infinite;
-  }
-
-  .nyc-car.two {
-    width: 105px;
-    animation-duration: 22s;
-    animation-delay: -8s;
-  }
-
-  .nyc-car.three {
-    width: 145px;
-    animation-duration: 28s;
-    animation-delay: -19s;
-  }
-
-  @keyframes nycDrive {
-    from { transform: translateX(-180px); }
-    to { transform: translateX(calc(100vw + 220px)); }
-  }
-
-  .nyc-car svg {
-    width: 100%;
-    height: auto;
-  }
-
-  @media (max-width: 900px) {
-    .nyc-right-building {
-      width: 46vw;
-      right: -28vw;
-      opacity: .28;
-    }
-
-    .nyc-bottom-city {
-      height: 430px;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .nyc-car { animation: none; }
-  }
-
-  @media print {
-    .nyc-illustration-layer,
-    .nyc-bottom-city {
-      display: none !important;
-    }
-  }
-</style>
-<style id="cream-readability-overrides">
-:root{
-  --paper:#f6efe5 !important;
-  --cream:#fbf7f1 !important;
-  --white:#fbf7f1 !important;
-  --text:#000000 !important;
-  --ink:#000000 !important;
-  --muted:#2c2c2c !important;
-  --line:#000000 !important;
-}
-html,body{
-  background:var(--paper)!important;
-  color:#000!important;
-}
-body{
-  font-family:Arial,Helvetica,sans-serif!important;
-}
-h1,h2,h3,h4{
-  font-family:Georgia,"Times New Roman",serif!important;
-  color:#000!important;
-}
-p,li,label,small,span{
-  color:#222!important;
-}
-header{
-  background:rgba(246,239,229,.94)!important;
-}
-.profile-card,.about-card,.experience-card,.skill-card,.info-card,
-.tool-card,.dashboard-panel,.saved-item,.contact-card,.answer-card,
-.result-box{
-  background:var(--cream)!important;
-  border:1.5px solid #000!important;
-  box-shadow:8px 8px 0 rgba(0,0,0,.06)!important;
-}
-.button,.mini-button,.copy-button{
-  background:var(--cream)!important;
-  color:#000!important;
-  border:1.5px solid #000!important;
-}
-.button:hover,.mini-button:hover,.copy-button:hover{
-  background:#000!important;
-  color:#fbf7f1!important;
-}
-.button.primary{
-  background:#000!important;
-  color:#fbf7f1!important;
-}
-textarea,input{
-  background:#fffdf9!important;
-  color:#000!important;
-  border:1.5px solid #000!important;
-}
-.nyc-bottom-city{
-  background:var(--paper)!important;
-}
-</style>
-<style id="black-text-and-constellation">
-:root{
-  --blue:#000000 !important;
-  --navy:#000000 !important;
-  --text:#000000 !important;
-  --muted:#2b2b2b !important;
-}
-.eyebrow,
-.section-number,
-.company,
-.subline,
-.fact-label,
-.nav-links,
-.nav-links a,
-.profile-card p,
-.contact-card p,
-.helper-text,
-.saved-item small,
-.experience-meta,
-.experience-meta strong{
-  color:#000000 !important;
-}
-.constellation-title{
-  display:block;
-  width:min(700px,100%);
-  margin:0 0 18px;
-}
-.constellation-title svg{
-  width:100%;
-  height:auto;
-  overflow:visible;
-}
-.constellation-line{
-  stroke:#000;
-  stroke-width:2;
-  fill:none;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-.constellation-star{
-  fill:#fffdf9;
-  stroke:#111;
-  stroke-width:1.8;
-}
-.constellation-spark{
-  fill:#000;
-}
-.resume-modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.72);
-  z-index:9999;
-  display:none;
-  align-items:flex-start;
-  justify-content:center;
-  padding:28px 16px;
-  overflow:auto;
-}
-.resume-modal.open{display:flex;}
-.resume-paper{
-  width:min(900px,100%);
-  background:#fffaf3;
-  color:#000;
-  border:2px solid #000;
-  padding:38px 42px;
-  position:relative;
-  box-shadow:12px 12px 0 rgba(0,0,0,.18);
-}
-.resume-actions{
-  position:sticky;
-  top:0;
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  justify-content:flex-end;
-  margin-bottom:20px;
-  background:#fffaf3;
-  padding-bottom:12px;
-  z-index:2;
-}
-.resume-actions button{
-  border:1.5px solid #000;
-  background:#fffaf3;
-  color:#000;
-  padding:9px 13px;
-  cursor:pointer;
-  font-weight:700;
-}
-.resume-actions button:hover{
-  background:#000;
-  color:#fffaf3;
-}
-.resume-header{
-  text-align:center;
-  border-bottom:2px solid #000;
-  padding-bottom:14px;
-  margin-bottom:18px;
-}
-.resume-header h2{
-  font-size:2.2rem;
-  margin-bottom:4px;
-}
-.resume-contact{
-  font-size:.95rem;
-}
-.resume-section{
-  margin-top:22px;
-}
-.resume-section h3{
-  font-size:1rem;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  border-bottom:1px solid #000;
-  padding-bottom:4px;
-  margin-bottom:12px;
-}
-.resume-entry{
-  margin-bottom:16px;
-}
-.resume-entry-head{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  align-items:flex-start;
-}
-.resume-entry-title{
-  font-weight:800;
-}
-.resume-entry-meta{
-  text-align:right;
-  white-space:nowrap;
-  font-size:.92rem;
-}
-.resume-entry ul{
-  margin:6px 0 0 20px;
-}
-.resume-entry li{
-  margin:4px 0;
-}
-@media(max-width:700px){
-  .resume-paper{padding:24px 20px;}
-  .resume-entry-head{display:block;}
-  .resume-entry-meta{text-align:left;white-space:normal;margin-top:3px;}
-}
-@media print{
-  body.printing-resume > *:not(.resume-modal){display:none!important;}
-  body.printing-resume .resume-modal{
-    position:static;
-    display:block!important;
-    background:#fff;
-    padding:0;
-  }
-  body.printing-resume .resume-paper{
-    width:100%;
-    box-shadow:none;
-    border:none;
-    padding:0;
-  }
-  body.printing-resume .resume-actions{display:none!important;}
-}
-</style>
-<style id="neutral-pinterest-overrides">
-:root{
-  --navy:#000000 !important;
-  --blue:#000000 !important;
-  --light-blue:#f3f0ea !important;
-  --cream:#f7f1e8 !important;
-  --white:#fffdf9 !important;
-  --text:#111111 !important;
-  --muted:#555555 !important;
-  --line:#1d1d1d !important;
-  --shadow:none !important;
-  --paper:#f7f1e8 !important;
-  --ink:#111111 !important;
-  --nyc-ink:#111111 !important;
-  --nyc-paper:#f7f1e8 !important;
-  --nyc-rose:#888888 !important;
-}
-
-html,body{
-  background:#f7f1e8 !important;
-  color:#111111 !important;
-}
-
-body{
-  font-family:Arial,Helvetica,sans-serif !important;
-  position:relative;
-  overflow-x:hidden;
-}
-
-h1,h2,h3,h4{
-  color:#111111 !important;
-  font-family:Georgia,"Times New Roman",serif !important;
-}
-
-p,li,label,small,
-.hero-subtitle,.helper-text,.experience-meta,.company,.subline,
-.fact-label,.fact-value,.contact-card p,.tool-card>p,.saved-item small{
-  color:#2b2b2b !important;
-}
-
-header{
-  background:rgba(247,241,232,.95)!important;
-  border-bottom:1px solid #111!important;
-}
-
-.nav-links a,.brand,.section-number{
-  color:#111!important;
-}
-
-.button,.mini-button,.copy-button{
-  border:1.4px solid #111!important;
-  background:#fffdf9!important;
-  color:#111!important;
-  border-radius:0!important;
-  box-shadow:none!important;
-}
-
-.button.primary{
-  background:#111!important;
-  color:#fffdf9!important;
-}
-
-.button:hover,.mini-button:hover,.copy-button:hover{
-  background:#111!important;
-  color:#fffdf9!important;
-}
-
-.profile-card,.about-card,.experience-card,.skill-card,.info-card,
-.leadership-item,.tool-card,.dashboard-panel,.saved-item,.contact-card,
-.answer-card,.result-box{
-  background:rgba(255,253,249,.93)!important;
-  color:#111!important;
-  border:1.3px solid #111!important;
-  border-radius:0!important;
-  box-shadow:6px 6px 0 rgba(0,0,0,.05)!important;
-}
-
-.tag,.status-pill,.match-score{
-  background:#f3f0ea!important;
-  color:#111!important;
-  border:1px solid #111!important;
-  border-radius:0!important;
-}
-
-textarea,input[type="text"],input[type="file"]{
-  background:#fffdf9!important;
-  color:#111!important;
-  border:1.3px solid #111!important;
-  border-radius:0!important;
-}
-
-textarea::placeholder,input::placeholder{
-  color:#666!important;
-}
-
-.tool-note,
-#job-tools [style*="#fff9ec"],
-#job-tools [style*="#f4f9fc"]{
-  background:#f3f0ea!important;
-  color:#111!important;
-  border:1px solid #111!important;
-}
-
-/* Continuous hand-drawn building border */
-.nyc-illustration-layer{
-  position:absolute!important;
-  inset:0!important;
-  min-height:100%!important;
-  overflow:visible!important;
-  z-index:1!important;
-  pointer-events:none!important;
-}
-
-.nyc-right-building{
-  position:absolute!important;
-  top:0!important;
-  right:-30px!important;
-  width:min(30vw,420px)!important;
-  height:100%!important;
-  opacity:.24!important;
-}
-
-.nyc-right-building svg{
-  width:100%!important;
-  height:100%!important;
-  min-height:100%!important;
-  preserveAspectRatio:none;
-}
-
-/* Extend border feel from top to footer */
-.nyc-right-building::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-left:1.2px solid rgba(17,17,17,.45);
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0 44px,
-      rgba(17,17,17,.10) 44px 45px
-    );
-}
-
-main,header,footer{
-  position:relative;
-  z-index:3;
-}
-
-/* Keep content readable and away from illustration */
-@media (min-width:1100px){
-  main>section .container,
-  header .container,
-  footer .container{
-    width:min(calc(100% - 360px),1120px)!important;
-    margin-left:clamp(30px,5vw,90px)!important;
-    margin-right:auto!important;
-  }
-}
-
-/* Floating divider illustrations */
-.section-divider-art{
-  position:relative;
-  height:92px;
-  margin:0 auto;
-  width:min(calc(100% - 40px),1120px);
-  pointer-events:none;
-}
-
-.section-divider-art .cloud{
-  position:absolute;
-  width:110px;
-  height:42px;
-  border:1.4px solid #111;
-  border-top:none;
-  border-radius:0 0 55px 55px;
-  opacity:.42;
-}
-
-.section-divider-art .cloud:before,
-.section-divider-art .cloud:after{
-  content:"";
-  position:absolute;
-  border:1.4px solid #111;
-  background:#f7f1e8;
-  border-bottom:none;
-  border-radius:50% 50% 0 0;
-}
-
-.section-divider-art .cloud:before{
-  width:48px;height:34px;left:14px;top:-24px;
-}
-.section-divider-art .cloud:after{
-  width:58px;height:40px;right:10px;top:-30px;
-}
-
-.section-divider-art .cloud.left{left:7%;top:34px}
-.section-divider-art .cloud.right{right:12%;top:28px;transform:scale(.78)}
-
-.section-divider-art .tiny-star{
-  position:absolute;
-  color:#111;
-  font-family:Georgia,serif;
-  font-size:18px;
-  opacity:.55;
-}
-.section-divider-art .a{left:30%;top:22px}
-.section-divider-art .b{left:48%;top:48px}
-.section-divider-art .c{right:28%;top:12px}
-.section-divider-art .d{right:7%;top:58px}
-
-.nyc-stars{opacity:.28!important}
-.nyc-bottom-city{
-  background:#f7f1e8!important;
-  border-top:1px solid #111!important;
-}
-
-footer{
-  background:#111!important;
-  color:#f7f1e8!important;
-  border-top:1px solid #111!important;
-}
-footer *{color:#f7f1e8!important}
-
-@media(max-width:1099px){
-  .nyc-right-building{
-    width:48vw!important;
-    right:-29vw!important;
-    opacity:.12!important;
-  }
-}
-
-@media(max-width:700px){
-  .nyc-right-building{display:none!important}
-  .section-divider-art{height:74px}
-  .section-divider-art .cloud{transform:scale(.72)}
-  .section-divider-art .cloud.right{transform:scale(.6)}
-}
-</style>
-<style id="final-building-layout">
-  /* Keep every heading and card safely away from the right-side illustration. */
-  main > section .container,
-  header .container,
-  footer .container {
-    position: relative;
-    z-index: 5;
-  }
-
-  @media (min-width: 1100px) {
-    main > section .container,
-    header .container,
-    footer .container,
-    .section-divider-art {
-      width: min(calc(100% - 455px), 1080px) !important;
-      margin-left: clamp(34px, 5vw, 92px) !important;
-      margin-right: auto !important;
-    }
-
-    .hero-grid {
-      grid-template-columns: minmax(0, 1.25fr) minmax(250px, .65fr) !important;
-      gap: 38px !important;
-    }
-  }
-
-  .section-heading {
-    position: relative;
-    z-index: 6;
-    background: rgba(247, 241, 232, .96) !important;
-    border-left: 1.5px solid #111;
-    padding: 20px 24px !important;
-  }
-
-  .section-heading > div:last-child,
-  .section-heading h2,
-  .section-heading p {
-    max-width: 100% !important;
-  }
-
-  .about-card,
-  .experience-list,
-  .skills-grid,
-  .tool-grid,
-  .two-column,
-  .leadership-list,
-  .contact-card {
-    position: relative;
-    z-index: 6;
-  }
-
-  .hero .container {
-    position: relative;
-    z-index: 6;
-  }
-
-  .nyc-illustration-layer {
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    height: 100% !important;
-    min-height: 100% !important;
-    overflow: hidden !important;
-    pointer-events: none !important;
-    z-index: 1 !important;
-  }
-
-  .nyc-right-building {
-    position: absolute !important;
-    top: 0 !important;
-    right: -18px !important;
-    bottom: 0 !important;
-    width: min(31vw, 430px) !important;
-    height: 100% !important;
-    min-height: 100% !important;
-    opacity: .20 !important;
-  }
-
-  .nyc-right-building svg {
-    display: block;
-    width: 100% !important;
-    height: 100% !important;
-    min-height: 100% !important;
-  }
-
-  /* Similar to the TikTok/Pinterest screenshots: a soft continuous architectural border. */
-  .nyc-right-building::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-left: 1px solid rgba(17,17,17,.28);
-    background: linear-gradient(
-      to left,
-      rgba(247,241,232,.02),
-      rgba(247,241,232,.30)
-    );
-  }
-
-  @media (max-width: 1099px) {
-    .nyc-right-building {
-      width: 48vw !important;
-      right: -30vw !important;
-      opacity: .10 !important;
-    }
-
-    .section-heading {
-      background: rgba(247,241,232,.98) !important;
-    }
-  }
-
-  @media (max-width: 760px) {
-    .nyc-right-building {
-      display: none !important;
-    }
-
-    .section-heading {
-      padding: 16px !important;
-    }
-  }
-</style>
-<style id="requested-version-final">
-:root{--navy:#111!important;--blue:#111!important;--light-blue:#f0ece5!important;--cream:#f7f1e8!important;--white:#fffdf9!important;--text:#111!important;--muted:#4d4d4d!important;--line:#161616!important;--paper:#f7f1e8!important;--ink:#111!important;--nyc-ink:#111!important;--nyc-paper:#f7f1e8!important}
-html,body{background:#f7f1e8!important;color:#111!important}
-body{font-family:Arial,Helvetica,sans-serif!important}
-h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif!important;color:#111!important}
-p,li,label,small,.hero-subtitle,.company,.subline,.fact-label,.fact-value,.experience-meta{color:#2b2b2b!important}
-header{background:rgba(247,241,232,.96)!important;border-bottom:1px solid #111!important}
-.nav-links a,.brand,.section-number{color:#111!important}
-.profile-card,.about-card,.experience-card,.skill-card,.info-card,.leadership-item,.contact-card,.project-card{background:rgba(255,253,249,.94)!important;color:#111!important;border:1.3px solid #111!important;border-radius:0!important;box-shadow:6px 6px 0 rgba(0,0,0,.05)!important}
-.button,.contact-link{background:#fffdf9!important;color:#111!important;border:1.4px solid #111!important;border-radius:0!important;box-shadow:none!important}
-.button.primary{background:#111!important;color:#fffdf9!important}
-.button:hover{background:#111!important;color:#fffdf9!important}
-.tag,.project-tags span,.project-metrics span{background:#f0ece5!important;color:#111!important;border:1px solid #111!important;border-radius:0!important}
-main>section .container,header .container,footer .container,.section-divider-art{position:relative;z-index:6}
-@media(min-width:1100px){main>section .container,header .container,footer .container,.section-divider-art{width:min(calc(100% - 470px),1040px)!important;margin-left:clamp(34px,5vw,90px)!important;margin-right:auto!important}.hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(240px,.65fr)!important;gap:36px!important}}
-.section-heading{position:relative;z-index:7;background:rgba(247,241,232,.98)!important;border-left:1.5px solid #111;padding:20px 24px!important}
-.section-heading h2,.section-heading p,.section-heading>div:last-child{max-width:100%!important}
-.hero .container,.about-card,.experience-list,.skills-grid,.project-grid,.two-column,.leadership-list,.contact-card{position:relative;z-index:7}
-.nyc-illustration-layer{position:absolute!important;inset:0!important;height:100%!important;min-height:100%!important;overflow:hidden!important;z-index:1!important;pointer-events:none!important}
-.nyc-right-building{position:absolute!important;top:0!important;right:-14px!important;bottom:0!important;width:min(31vw,430px)!important;height:100%!important;min-height:100%!important;opacity:.14!important}
-.nyc-right-building svg{display:block!important;width:100%!important;height:100%!important;min-height:100%!important}
-.nyc-right-building::after{content:"";position:absolute;inset:0;border-left:1px solid rgba(17,17,17,.25);background:linear-gradient(to left,rgba(247,241,232,.01),rgba(247,241,232,.32))}
-.nyc-stars{opacity:.25!important}
-.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;position:relative;z-index:7}
-.project-card{padding:28px}.project-card.featured{grid-column:1/-1}
-.project-kicker{text-transform:uppercase;letter-spacing:.11em;font-size:.75rem;color:#444;margin-bottom:10px}
-.project-card h3{font-size:1.65rem;margin-bottom:12px}.project-card ul{margin:10px 0 0 20px}
-.project-metrics,.project-tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
-.project-metrics span,.project-tags span{padding:8px 10px;font-size:.82rem}.project-metrics strong{display:block;font-size:1.2rem}
-footer{background:#111!important;color:#f7f1e8!important}footer *{color:#f7f1e8!important}
-@media(max-width:1099px){.nyc-right-building{width:48vw!important;right:-30vw!important;opacity:.08!important}}
-@media(max-width:850px){.project-grid{grid-template-columns:1fr}.project-card.featured{grid-column:auto}}
-@media(max-width:760px){.nyc-right-building{display:none!important}.section-heading{padding:16px!important}}
-</style>
-<style id="citi-case-study-styles">
-  .project-open-button {
-    margin-top: 18px;
-  }
-
-  .case-study-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 12000;
-    display: none;
-    align-items: flex-start;
-    justify-content: center;
-    overflow-y: auto;
-    padding: 28px 16px;
-    background: rgba(17, 17, 17, .78);
-  }
-
-  .case-study-modal.open {
-    display: flex;
-  }
-
-  .case-study-paper {
-    width: min(980px, 100%);
-    margin: auto;
-    padding: clamp(26px, 5vw, 54px);
-    background: #fffdf9;
-    color: #111;
-    border: 1.5px solid #111;
-    box-shadow: 12px 12px 0 rgba(0, 0, 0, .2);
-    position: relative;
-  }
-
-  .case-study-actions {
-    position: sticky;
-    top: -1px;
-    z-index: 3;
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    background: #fffdf9;
-  }
-
-  .case-study-actions button {
-    border: 1.4px solid #111;
-    background: #fffdf9;
-    color: #111;
-    padding: 9px 13px;
-    font: inherit;
-    font-weight: 700;
-    cursor: pointer;
-  }
-
-  .case-study-actions button:hover {
-    background: #111;
-    color: #fffdf9;
-  }
-
-  .case-study-kicker {
-    text-transform: uppercase;
-    letter-spacing: .14em;
-    font-size: .76rem;
-    color: #555;
-    margin-bottom: 10px;
-  }
-
-  .case-study-paper h2 {
-    font-size: clamp(2.2rem, 6vw, 4.6rem);
-    line-height: .98;
-    margin-bottom: 18px;
-  }
-
-  .case-study-intro {
-    max-width: 760px;
-    font-size: 1.08rem;
-    margin-bottom: 30px;
-  }
-
-  .case-metrics {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 12px;
-    margin: 28px 0 38px;
-  }
-
-  .case-metric {
-    border: 1.3px solid #111;
-    background: #f0ece5;
-    padding: 18px;
-  }
-
-  .case-metric strong {
-    display: block;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.8rem;
-    margin-bottom: 4px;
-  }
-
-  .case-section {
-    margin-top: 36px;
-  }
-
-  .case-section h3 {
-    font-size: 1.45rem;
-    border-bottom: 1px solid #111;
-    padding-bottom: 8px;
-    margin-bottom: 18px;
-  }
-
-  .process-timeline {
-    display: grid;
-    gap: 0;
-    max-width: 780px;
-  }
-
-  .process-step {
-    position: relative;
-    display: grid;
-    grid-template-columns: 46px 1fr;
-    gap: 16px;
-    padding-bottom: 24px;
-  }
-
-  .process-step:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    left: 22px;
-    top: 42px;
-    bottom: 0;
-    border-left: 1.5px solid #111;
-  }
-
-  .process-number {
-    width: 44px;
-    height: 44px;
-    display: grid;
-    place-items: center;
-    border: 1.5px solid #111;
-    background: #f7f1e8;
-    font-weight: 800;
-  }
-
-  .process-copy h4 {
-    margin-bottom: 4px;
-    font-size: 1.03rem;
-  }
-
-  .case-tag-list,
-  .case-result-grid,
-  .case-skill-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .case-tag-list span,
-  .case-result,
-  .case-skill {
-    border: 1.2px solid #111;
-    background: #f0ece5;
-    padding: 10px 12px;
-  }
-
-  .case-result-grid,
-  .case-skill-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .case-result,
-  .case-skill {
-    background: #fffdf9;
-  }
-
-  .case-result strong,
-  .case-skill strong {
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  @media (max-width: 760px) {
-    .case-metrics {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .case-result-grid,
-    .case-skill-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .case-study-paper {
-      padding: 24px 20px;
-    }
-  }
-</style>
-<style id="citi-divider-style">
-.citi-divider{
-text-align:center;
-margin:22px 0 14px;
-letter-spacing:.08em;
-color:#666;
-font-size:.95rem;
-}
-.experience-card ul li{margin-bottom:14px;}
-.project-open-button{display:block;margin:0 auto;}
-</style>
-<style>
-pre,code,.code-block,.source-code,.debug,.developer-output,.raw-code,.html-code{
-display:none!important;
-}
-</style>
-<style id="interactive-portfolio-features">
-.portfolio-controls{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  margin-left:auto;
-}
-.mode-control{
-  border:1.3px solid #111;
-  background:#fffdf9;
-  color:#111;
-  padding:8px 11px;
-  font:inherit;
-  font-size:.78rem;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  cursor:pointer;
-}
-.mode-control:hover,
-.mode-control[aria-pressed="true"]{
-  background:#111;
-  color:#fffdf9;
-}
-.moon-control{
-  width:40px;
-  height:40px;
-  padding:0;
-  border-radius:50%!important;
-  font-size:1.25rem;
-}
-
-/* 2 — subtle city animation */
-.nyc-stars span{
-  animation:twinkle 4.5s ease-in-out infinite;
-}
-.nyc-stars span:nth-child(2n){animation-delay:-1.3s}
-.nyc-stars span:nth-child(3n){animation-delay:-2.7s}
-.section-divider-art .cloud.left{
-  animation:cloudFloatLeft 18s ease-in-out infinite;
-}
-.section-divider-art .cloud.right{
-  animation:cloudFloatRight 22s ease-in-out infinite;
-}
-.nyc-right-building{
-  animation:buildingBreathe 10s ease-in-out infinite;
-}
-@keyframes twinkle{
-  0%,100%{opacity:.25;transform:scale(.8)}
-  50%{opacity:.9;transform:scale(1.15)}
-}
-@keyframes cloudFloatLeft{
-  0%,100%{transform:translateX(0)}
-  50%{transform:translateX(24px)}
-}
-@keyframes cloudFloatRight{
-  0%,100%{transform:scale(.78) translateX(0)}
-  50%{transform:scale(.78) translateX(-26px)}
-}
-@keyframes buildingBreathe{
-  0%,100%{opacity:.14}
-  50%{opacity:.19}
-}
-
-/* 5 — interactive skills */
-.tag[role="button"]{
-  cursor:pointer;
-  transition:transform .18s ease, background .18s ease, color .18s ease;
-}
-.tag[role="button"]:hover,
-.tag[role="button"]:focus,
-.tag[role="button"].active{
-  transform:translateY(-2px);
-  background:#111!important;
-  color:#fffdf9!important;
-  outline:none;
-}
-.skill-detail-panel{
-  margin-top:22px;
-  padding:24px 26px;
-  border:1.3px solid #111;
-  background:#fffdf9;
-  box-shadow:6px 6px 0 rgba(0,0,0,.05);
-}
-.skill-detail-panel h3{
-  margin-bottom:7px;
-}
-
-/* 10 — day/night mode */
-body.night-mode{
-  --paper:#171717!important;
-  --cream:#232323!important;
-  --white:#292929!important;
-  --text:#f4efe7!important;
-  --ink:#f4efe7!important;
-  --muted:#c5c0b8!important;
-  --line:#e9e1d7!important;
-  --nyc-ink:#f4efe7!important;
-  --nyc-paper:#171717!important;
-  background:#171717!important;
-  color:#f4efe7!important;
-}
-body.night-mode header{
-  background:rgba(23,23,23,.94)!important;
-  border-color:#e9e1d7!important;
-}
-body.night-mode h1,
-body.night-mode h2,
-body.night-mode h3,
-body.night-mode h4,
-body.night-mode p,
-body.night-mode li,
-body.night-mode span,
-body.night-mode .brand,
-body.night-mode .nav-links a,
-body.night-mode .section-number,
-body.night-mode .company,
-body.night-mode .experience-meta,
-body.night-mode .fact-label,
-body.night-mode .fact-value{
-  color:#f4efe7!important;
-}
-body.night-mode .profile-card,
-body.night-mode .about-card,
-body.night-mode .experience-card,
-body.night-mode .skill-card,
-body.night-mode .info-card,
-body.night-mode .leadership-item,
-body.night-mode .contact-card,
-body.night-mode .project-card,
-body.night-mode .skill-detail-panel,
-body.night-mode .recruiter-summary-card{
-  background:rgba(41,41,41,.96)!important;
-  color:#f4efe7!important;
-  border-color:#e9e1d7!important;
-}
-body.night-mode .section-heading{
-  background:rgba(23,23,23,.96)!important;
-  border-color:#e9e1d7!important;
-}
-body.night-mode .tag,
-body.night-mode .project-tags span,
-body.night-mode .project-metrics span{
-  background:#303030!important;
-  color:#f4efe7!important;
-  border-color:#e9e1d7!important;
-}
-body.night-mode .mode-control{
-  background:#232323;
-  color:#f4efe7;
-  border-color:#f4efe7;
-}
-body.night-mode .mode-control:hover,
-body.night-mode .mode-control[aria-pressed="true"]{
-  background:#f4efe7;
-  color:#171717;
-}
-body.night-mode footer{
-  background:#0d0d0d!important;
-}
-body.night-mode .nyc-right-building{
-  opacity:.26!important;
-}
-body.night-mode .nyc-stars{
-  opacity:.85!important;
-}
-
-/* 11 — recruiter mode */
-.recruiter-summary{
-  display:none;
-  padding:38px 0 14px;
-}
-.recruiter-summary h2{
-  font-size:clamp(1.8rem,4vw,2.8rem);
-  margin-bottom:18px;
-}
-.recruiter-summary-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:14px;
-}
-.recruiter-summary-card{
-  padding:20px;
-  border:1.3px solid #111;
-  background:#fffdf9;
-}
-.recruiter-summary-card strong{
-  display:block;
-  margin-bottom:6px;
-}
-body.recruiter-mode .recruiter-summary{
-  display:block;
-}
-body.recruiter-mode .section-divider-art,
-body.recruiter-mode .nyc-bottom-city{
-  display:none!important;
-}
-body.recruiter-mode section{
-  padding:38px 0!important;
-}
-body.recruiter-mode .section-heading{
-  margin-bottom:20px!important;
-}
-body.recruiter-mode .experience-card{
-  padding:20px!important;
-}
-body.recruiter-mode .experience-card:not(.citi-experience-card){
-  display:none!important;
-}
-body.recruiter-mode #leadership{
-  display:none!important;
-}
-body.recruiter-mode .nyc-right-building{
-  opacity:.07!important;
-}
-
-@media(max-width:850px){
-  .portfolio-controls{
-    margin-left:0;
-  }
-  .recruiter-summary-grid{
-    grid-template-columns:1fr;
-  }
-}
-@media(prefers-reduced-motion:reduce){
-  .nyc-stars span,
-  .section-divider-art .cloud,
-  .nyc-right-building{
-    animation:none!important;
-  }
-}
-</style>
+<style>html{scroll-behavior:smooth}*,*::before,*::after{box-sizing:border-box}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
-<div aria-hidden="true" class="nyc-illustration-layer">
-<div class="nyc-stars">
-<span class="s1">✦</span><span class="s2">⋆</span><span class="s3">✧</span>
-<span class="s4">★</span><span class="s5">⋆</span><span class="s6">✦</span>
-<span class="s7">✧</span><span class="s8">⋆</span><span class="s9">✦</span>
-<span class="s10">★</span><span class="s11">⋆</span><span class="s12">✧</span>
-<span class="s13">✦</span><span class="s14">⋆</span>
-</div>
-<div class="nyc-right-building">
-<svg preserveaspectratio="none" viewbox="0 0 420 7200">
-<defs>
-<g class="nyc-line" id="brownstoneFloor">
-<rect height="900" width="310" x="108" y="0"></rect>
-<path d="M108 0 H418 M122 16 H418 M122 76 H418 M122 136 H418 M122 196 H418 M122 256 H418 M122 316 H418 M122 376 H418 M122 436 H418 M122 496 H418 M122 556 H418 M122 616 H418 M122 676 H418 M122 736 H418 M122 796 H418 M122 856 H418"></path>
-<path d="M142 0 V900 M390 0 V900"></path>
-<!-- windows and trim -->
-<rect height="112" width="66" x="168" y="76"></rect>
-<path d="M180 88 V176 M222 88 V176 M168 132 H234"></path>
-<rect height="112" width="66" x="286" y="76"></rect>
-<path d="M298 88 V176 M340 88 V176 M286 132 H352"></path>
-<path d="M154 62 H366 M154 200 H366"></path>
-<rect height="112" width="66" x="168" y="370"></rect>
-<path d="M180 382 V470 M222 382 V470 M168 426 H234"></path>
-<rect height="112" width="66" x="286" y="370"></rect>
-<path d="M298 382 V470 M340 382 V470 M286 426 H352"></path>
-<path d="M154 356 H366 M154 494 H366"></path>
-<rect height="112" width="66" x="168" y="664"></rect>
-<path d="M180 676 V764 M222 676 V764 M168 720 H234"></path>
-<rect height="112" width="66" x="286" y="664"></rect>
-<path d="M298 676 V764 M340 676 V764 M286 720 H352"></path>
-<path d="M154 650 H366 M154 788 H366"></path>
-<!-- fire escape platforms -->
-<path d="M68 218 H344 V272 H68 Z"></path>
-<path d="M78 218 V272 M102 218 V272 M126 218 V272 M150 218 V272 M174 218 V272 M198 218 V272 M222 218 V272 M246 218 V272 M270 218 V272 M294 218 V272 M318 218 V272"></path>
-<path d="M68 512 H344 V566 H68 Z"></path>
-<path d="M78 512 V566 M102 512 V566 M126 512 V566 M150 512 V566 M174 512 V566 M198 512 V566 M222 512 V566 M246 512 V566 M270 512 V566 M294 512 V566 M318 512 V566"></path>
-<path d="M68 806 H344 V860 H68 Z"></path>
-<path d="M78 806 V860 M102 806 V860 M126 806 V860 M150 806 V860 M174 806 V860 M198 806 V860 M222 806 V860 M246 806 V860 M270 806 V860 M294 806 V860 M318 806 V860"></path>
-<!-- diagonal ladders -->
-<path d="M92 272 L286 512 M118 272 L312 512"></path>
-<path d="M92 566 L286 806 M118 566 L312 806"></path>
-<path d="M116 300 L142 332 M142 332 L168 364 M168 364 L194 396 M194 396 L220 428 M220 428 L246 460 M246 460 L272 492"></path>
-<path d="M116 594 L142 626 M142 626 L168 658 M168 658 L194 690 M194 690 L220 722 M220 722 L246 754 M246 754 L272 786"></path>
-<!-- flower boxes and vines -->
-<path d="M300 192 H372 V216 H300 Z M310 192 C294 168 304 150 320 142 C332 160 332 178 318 192 M334 192 C342 164 360 156 376 166 C368 186 354 198 334 192"></path>
-<path d="M300 486 H372 V510 H300 Z M310 486 C294 462 304 444 320 436 C332 454 332 472 318 486 M334 486 C342 458 360 450 376 460 C368 480 354 492 334 486"></path>
-<path d="M300 780 H372 V804 H300 Z M310 780 C294 756 304 738 320 730 C332 748 332 766 318 780 M334 780 C342 752 360 744 376 754 C368 774 354 786 334 780"></path>
-<!-- façade depth -->
-<path d="M108 0 L76 42 V900 H108"></path>
-<path d="M76 42 H108"></path>
-</g>
-</defs>
-<use href="#brownstoneFloor" y="0"></use>
-<use href="#brownstoneFloor" y="900"></use>
-<use href="#brownstoneFloor" y="1800"></use>
-<use href="#brownstoneFloor" y="2700"></use>
-<use href="#brownstoneFloor" y="3600"></use>
-<use href="#brownstoneFloor" y="4500"></use>
-<use href="#brownstoneFloor" y="5400"></use>
-<use href="#brownstoneFloor" y="6300"></use>
-</svg>
-</div>
-</div>
-<header>
-<div class="container">
-<nav>
-<a class="brand" href="#top">Karli Macrides</a>
-<div class="nav-links">
-<a href="#about">About</a>
-<a href="#experience">Experience</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#education">Education</a>
-<a href="#contact">Contact</a>
-</div>
-<div class="portfolio-controls" id="portfolioControls"><button aria-pressed="false" class="mode-control" onclick="toggleRecruiterMode()" type="button">Recruiter Mode</button><button aria-label="Switch between day and night mode" aria-pressed="false" class="mode-control moon-control" onclick="toggleNightMode()" type="button">☾</button></div></nav>
-</div>
-</header>
-<main id="top"><section class="recruiter-summary" id="recruiterSummary"><div class="container"><h2>Recruiter Overview</h2><div class="recruiter-summary-grid"><div class="recruiter-summary-card"><strong>Focus</strong><p>Finance, financial controls, process improvement, and AI-enabled workflow design</p></div><div class="recruiter-summary-card"><strong>Current Education</strong><p>Binghamton University — Business Administration, Finance concentration</p></div><div class="recruiter-summary-card"><strong>Featured Experience</strong><p>Citi — Banking &amp; Services Financial Controllers</p></div><div class="recruiter-summary-card"><strong>Core Strengths</strong><p>Financial analysis, Excel, AI tools, communication, and process improvement</p></div></div></div></section>
-<div aria-hidden="true" class="staircase">
-<svg viewbox="0 0 280 760">
-<path class="sketch-line" d="M220 15 L255 42 L210 92 L250 130 L205 180 L250 220 L202 270 L250 315 L200 370 L246 410 L198 466 L244 505 L198 560 L246 605 L202 660 L248 705"></path>
-<path class="sketch-line" d="M195 15 L230 42 L185 92 L225 130 L180 180 L225 220 L177 270 L225 315 L175 370 L221 410 L173 466 L219 505 L173 560 L221 605 L177 660 L223 705"></path>
-</svg>
-</div>
-<section class="hero">
-<div class="container hero-grid">
-<div>
-<div aria-label="Portfolio" class="constellation-title">
-<svg aria-labelledby="portfolioConstellationTitle" role="img" viewbox="0 0 860 150">
-<title id="portfolioConstellationTitle">Portfolio written as a constellation</title>
-<g class="constellation-line">
-<!-- P -->
-<path d="M25 120 L25 28 L78 28 L96 46 L96 69 L78 86 L25 86"></path>
-<!-- O -->
-<path d="M126 47 L144 28 L181 28 L199 47 L199 101 L181 120 L144 120 L126 101 Z"></path>
-<!-- R -->
-<path d="M230 120 L230 28 L283 28 L301 46 L301 69 L283 86 L230 86 M267 86 L307 120"></path>
-<!-- T -->
-<path d="M329 28 L405 28 M367 28 L367 120"></path>
-<!-- F -->
-<path d="M432 120 L432 28 L500 28 M432 72 L486 72"></path>
-<!-- O -->
-<path d="M527 47 L545 28 L582 28 L600 47 L600 101 L582 120 L545 120 L527 101 Z"></path>
-<!-- L -->
-<path d="M628 28 L628 120 L686 120"></path>
-<!-- I -->
-<path d="M708 28 L748 28 M728 28 L728 120 M708 120 L748 120"></path>
-<!-- O -->
-<path d="M782 47 L800 28 L837 28 L855 47 L855 101 L837 120 L800 120 L782 101 Z"></path>
-</g>
-<g>
-<polygon class="constellation-star" points="25.0,114.0 26.8,118.1 31.0,118.1 27.7,120.8 29.0,125.5 25.0,123.0 21.0,125.5 22.3,120.8 19.0,118.1 23.2,118.1"></polygon><polygon class="constellation-star" points="25.0,22.0 26.8,26.1 31.0,26.1 27.7,28.8 29.0,33.5 25.0,31.0 21.0,33.5 22.3,28.8 19.0,26.1 23.2,26.1"></polygon><polygon class="constellation-star" points="78.0,22.0 79.8,26.1 84.0,26.1 80.7,28.8 82.0,33.5 78.0,31.0 74.0,33.5 75.3,28.8 72.0,26.1 76.2,26.1"></polygon><polygon class="constellation-star" points="96.0,40.0 97.8,44.1 102.0,44.1 98.7,46.8 100.0,51.5 96.0,49.0 92.0,51.5 93.3,46.8 90.0,44.1 94.2,44.1"></polygon><polygon class="constellation-star" points="96.0,63.0 97.8,67.1 102.0,67.1 98.7,69.8 100.0,74.5 96.0,72.0 92.0,74.5 93.3,69.8 90.0,67.1 94.2,67.1"></polygon><polygon class="constellation-star" points="78.0,80.0 79.8,84.1 84.0,84.1 80.7,86.8 82.0,91.5 78.0,89.0 74.0,91.5 75.3,86.8 72.0,84.1 76.2,84.1"></polygon>
-<polygon class="constellation-star" points="126.0,41.0 127.8,45.1 132.0,45.1 128.7,47.8 130.0,52.5 126.0,50.0 122.0,52.5 123.3,47.8 120.0,45.1 124.2,45.1"></polygon><polygon class="constellation-star" points="144.0,22.0 145.8,26.1 150.0,26.1 146.7,28.8 148.0,33.5 144.0,31.0 140.0,33.5 141.3,28.8 138.0,26.1 142.2,26.1"></polygon><polygon class="constellation-star" points="181.0,22.0 182.8,26.1 187.0,26.1 183.7,28.8 185.0,33.5 181.0,31.0 177.0,33.5 178.3,28.8 175.0,26.1 179.2,26.1"></polygon><polygon class="constellation-star" points="199.0,41.0 200.8,45.1 205.0,45.1 201.7,47.8 203.0,52.5 199.0,50.0 195.0,52.5 196.3,47.8 193.0,45.1 197.2,45.1"></polygon><polygon class="constellation-star" points="199.0,95.0 200.8,99.1 205.0,99.1 201.7,101.8 203.0,106.5 199.0,104.0 195.0,106.5 196.3,101.8 193.0,99.1 197.2,99.1"></polygon><polygon class="constellation-star" points="181.0,114.0 182.8,118.1 187.0,118.1 183.7,120.8 185.0,125.5 181.0,123.0 177.0,125.5 178.3,120.8 175.0,118.1 179.2,118.1"></polygon><polygon class="constellation-star" points="144.0,114.0 145.8,118.1 150.0,118.1 146.7,120.8 148.0,125.5 144.0,123.0 140.0,125.5 141.3,120.8 138.0,118.1 142.2,118.1"></polygon><polygon class="constellation-star" points="126.0,95.0 127.8,99.1 132.0,99.1 128.7,101.8 130.0,106.5 126.0,104.0 122.0,106.5 123.3,101.8 120.0,99.1 124.2,99.1"></polygon>
-<polygon class="constellation-star" points="230.0,114.0 231.8,118.1 236.0,118.1 232.7,120.8 234.0,125.5 230.0,123.0 226.0,125.5 227.3,120.8 224.0,118.1 228.2,118.1"></polygon><polygon class="constellation-star" points="230.0,22.0 231.8,26.1 236.0,26.1 232.7,28.8 234.0,33.5 230.0,31.0 226.0,33.5 227.3,28.8 224.0,26.1 228.2,26.1"></polygon><polygon class="constellation-star" points="283.0,22.0 284.8,26.1 289.0,26.1 285.7,28.8 287.0,33.5 283.0,31.0 279.0,33.5 280.3,28.8 277.0,26.1 281.2,26.1"></polygon><polygon class="constellation-star" points="301.0,40.0 302.8,44.1 307.0,44.1 303.7,46.8 305.0,51.5 301.0,49.0 297.0,51.5 298.3,46.8 295.0,44.1 299.2,44.1"></polygon><polygon class="constellation-star" points="301.0,63.0 302.8,67.1 307.0,67.1 303.7,69.8 305.0,74.5 301.0,72.0 297.0,74.5 298.3,69.8 295.0,67.1 299.2,67.1"></polygon><polygon class="constellation-star" points="283.0,80.0 284.8,84.1 289.0,84.1 285.7,86.8 287.0,91.5 283.0,89.0 279.0,91.5 280.3,86.8 277.0,84.1 281.2,84.1"></polygon><polygon class="constellation-star" points="267.0,80.0 268.8,84.1 273.0,84.1 269.7,86.8 271.0,91.5 267.0,89.0 263.0,91.5 264.3,86.8 261.0,84.1 265.2,84.1"></polygon><polygon class="constellation-star" points="307.0,114.0 308.8,118.1 313.0,118.1 309.7,120.8 311.0,125.5 307.0,123.0 303.0,125.5 304.3,120.8 301.0,118.1 305.2,118.1"></polygon>
-<polygon class="constellation-star" points="329.0,22.0 330.8,26.1 335.0,26.1 331.7,28.8 333.0,33.5 329.0,31.0 325.0,33.5 326.3,28.8 323.0,26.1 327.2,26.1"></polygon><polygon class="constellation-star" points="405.0,22.0 406.8,26.1 411.0,26.1 407.7,28.8 409.0,33.5 405.0,31.0 401.0,33.5 402.3,28.8 399.0,26.1 403.2,26.1"></polygon><polygon class="constellation-star" points="367.0,22.0 368.8,26.1 373.0,26.1 369.7,28.8 371.0,33.5 367.0,31.0 363.0,33.5 364.3,28.8 361.0,26.1 365.2,26.1"></polygon><polygon class="constellation-star" points="367.0,114.0 368.8,118.1 373.0,118.1 369.7,120.8 371.0,125.5 367.0,123.0 363.0,125.5 364.3,120.8 361.0,118.1 365.2,118.1"></polygon>
-<polygon class="constellation-star" points="432.0,114.0 433.8,118.1 438.0,118.1 434.7,120.8 436.0,125.5 432.0,123.0 428.0,125.5 429.3,120.8 426.0,118.1 430.2,118.1"></polygon><polygon class="constellation-star" points="432.0,22.0 433.8,26.1 438.0,26.1 434.7,28.8 436.0,33.5 432.0,31.0 428.0,33.5 429.3,28.8 426.0,26.1 430.2,26.1"></polygon><polygon class="constellation-star" points="500.0,22.0 501.8,26.1 506.0,26.1 502.7,28.8 504.0,33.5 500.0,31.0 496.0,33.5 497.3,28.8 494.0,26.1 498.2,26.1"></polygon><polygon class="constellation-star" points="432.0,66.0 433.8,70.1 438.0,70.1 434.7,72.8 436.0,77.5 432.0,75.0 428.0,77.5 429.3,72.8 426.0,70.1 430.2,70.1"></polygon><polygon class="constellation-star" points="486.0,66.0 487.8,70.1 492.0,70.1 488.7,72.8 490.0,77.5 486.0,75.0 482.0,77.5 483.3,72.8 480.0,70.1 484.2,70.1"></polygon>
-<polygon class="constellation-star" points="527.0,41.0 528.8,45.1 533.0,45.1 529.7,47.8 531.0,52.5 527.0,50.0 523.0,52.5 524.3,47.8 521.0,45.1 525.2,45.1"></polygon><polygon class="constellation-star" points="545.0,22.0 546.8,26.1 551.0,26.1 547.7,28.8 549.0,33.5 545.0,31.0 541.0,33.5 542.3,28.8 539.0,26.1 543.2,26.1"></polygon><polygon class="constellation-star" points="582.0,22.0 583.8,26.1 588.0,26.1 584.7,28.8 586.0,33.5 582.0,31.0 578.0,33.5 579.3,28.8 576.0,26.1 580.2,26.1"></polygon><polygon class="constellation-star" points="600.0,41.0 601.8,45.1 606.0,45.1 602.7,47.8 604.0,52.5 600.0,50.0 596.0,52.5 597.3,47.8 594.0,45.1 598.2,45.1"></polygon><polygon class="constellation-star" points="600.0,95.0 601.8,99.1 606.0,99.1 602.7,101.8 604.0,106.5 600.0,104.0 596.0,106.5 597.3,101.8 594.0,99.1 598.2,99.1"></polygon><polygon class="constellation-star" points="582.0,114.0 583.8,118.1 588.0,118.1 584.7,120.8 586.0,125.5 582.0,123.0 578.0,125.5 579.3,120.8 576.0,118.1 580.2,118.1"></polygon><polygon class="constellation-star" points="545.0,114.0 546.8,118.1 551.0,118.1 547.7,120.8 549.0,125.5 545.0,123.0 541.0,125.5 542.3,120.8 539.0,118.1 543.2,118.1"></polygon><polygon class="constellation-star" points="527.0,95.0 528.8,99.1 533.0,99.1 529.7,101.8 531.0,106.5 527.0,104.0 523.0,106.5 524.3,101.8 521.0,99.1 525.2,99.1"></polygon>
-<polygon class="constellation-star" points="628.0,22.0 629.8,26.1 634.0,26.1 630.7,28.8 632.0,33.5 628.0,31.0 624.0,33.5 625.3,28.8 622.0,26.1 626.2,26.1"></polygon><polygon class="constellation-star" points="628.0,114.0 629.8,118.1 634.0,118.1 630.7,120.8 632.0,125.5 628.0,123.0 624.0,125.5 625.3,120.8 622.0,118.1 626.2,118.1"></polygon><polygon class="constellation-star" points="686.0,114.0 687.8,118.1 692.0,118.1 688.7,120.8 690.0,125.5 686.0,123.0 682.0,125.5 683.3,120.8 680.0,118.1 684.2,118.1"></polygon>
-<polygon class="constellation-star" points="708.0,22.0 709.8,26.1 714.0,26.1 710.7,28.8 712.0,33.5 708.0,31.0 704.0,33.5 705.3,28.8 702.0,26.1 706.2,26.1"></polygon><polygon class="constellation-star" points="748.0,22.0 749.8,26.1 754.0,26.1 750.7,28.8 752.0,33.5 748.0,31.0 744.0,33.5 745.3,28.8 742.0,26.1 746.2,26.1"></polygon><polygon class="constellation-star" points="728.0,22.0 729.8,26.1 734.0,26.1 730.7,28.8 732.0,33.5 728.0,31.0 724.0,33.5 725.3,28.8 722.0,26.1 726.2,26.1"></polygon><polygon class="constellation-star" points="728.0,114.0 729.8,118.1 734.0,118.1 730.7,120.8 732.0,125.5 728.0,123.0 724.0,125.5 725.3,120.8 722.0,118.1 726.2,118.1"></polygon><polygon class="constellation-star" points="708.0,114.0 709.8,118.1 714.0,118.1 710.7,120.8 712.0,125.5 708.0,123.0 704.0,125.5 705.3,120.8 702.0,118.1 706.2,118.1"></polygon><polygon class="constellation-star" points="748.0,114.0 749.8,118.1 754.0,118.1 750.7,120.8 752.0,125.5 748.0,123.0 744.0,125.5 745.3,120.8 742.0,118.1 746.2,118.1"></polygon>
-<polygon class="constellation-star" points="782.0,41.0 783.8,45.1 788.0,45.1 784.7,47.8 786.0,52.5 782.0,50.0 778.0,52.5 779.3,47.8 776.0,45.1 780.2,45.1"></polygon>
-<polygon class="constellation-star" points="800.0,22.0 801.8,26.1 806.0,26.1 802.7,28.8 804.0,33.5 800.0,31.0 796.0,33.5 797.3,28.8 794.0,26.1 798.2,26.1"></polygon>
-<polygon class="constellation-star" points="837.0,22.0 838.8,26.1 843.0,26.1 839.7,28.8 841.0,33.5 837.0,31.0 833.0,33.5 834.3,28.8 831.0,26.1 835.2,26.1"></polygon>
-<polygon class="constellation-star" points="855.0,41.0 856.8,45.1 861.0,45.1 857.7,47.8 859.0,52.5 855.0,50.0 851.0,52.5 852.3,47.8 849.0,45.1 853.2,45.1"></polygon>
-<polygon class="constellation-star" points="855.0,95.0 856.8,99.1 861.0,99.1 857.7,101.8 859.0,106.5 855.0,104.0 851.0,106.5 852.3,101.8 849.0,99.1 853.2,99.1"></polygon>
-<polygon class="constellation-star" points="837.0,114.0 838.8,118.1 843.0,118.1 839.7,120.8 841.0,125.5 837.0,123.0 833.0,125.5 834.3,120.8 831.0,118.1 835.2,118.1"></polygon>
-<polygon class="constellation-star" points="800.0,114.0 801.8,118.1 806.0,118.1 802.7,120.8 804.0,125.5 800.0,123.0 796.0,125.5 797.3,120.8 794.0,118.1 798.2,118.1"></polygon>
-<polygon class="constellation-star" points="782.0,95.0 783.8,99.1 788.0,99.1 784.7,101.8 786.0,106.5 782.0,104.0 778.0,106.5 779.3,101.8 776.0,99.1 780.2,99.1"></polygon>
-<circle class="constellation-spark" cx="112" cy="15" r="2.5"></circle><circle class="constellation-spark" cx="415" cy="105" r="2"></circle><circle class="constellation-spark" cx="617" cy="12" r="2.5"></circle>
-</g>
-</svg>
-</div>
-<h1>Karli Macrides</h1>
-<p class="hero-subtitle">I’m Karli Macrides, a rising senior at Binghamton University pursuing a Bachelor of Science in Business Administration with a concentration in Finance. I have experience across financial analysis, accounting, commercial lending, bid administration, artificial intelligence, process improvement, and human resources.</p>
-<div class="hero-actions">
-<a class="button primary" href="#experience">View my experience</a>
-</div>
-</div>
-<aside aria-label="Professional summary" class="profile-card">
-<div class="quick-facts">
-<div>
-<span class="fact-label">Location</span>
-<div class="fact-value">Buffalo, New York</div>
-</div>
-<div>
-<span class="fact-label">Education</span>
-<div class="fact-value">B.S. Business Administration — Finance</div>
-</div>
-<div>
-<span class="fact-label">Graduation</span>
-<div class="fact-value">Expected May 2027</div>
-</div>
-</div>
-</aside>
-</div>
-</section>
-<section id="about">
-<div class="container">
-<div class="section-heading">
-<div class="section-number">01 — About</div>
-<div>
-<h2>A versatile foundation across finance and business operations.</h2>
-<p>
-              My experience has helped me build a practical understanding of how financial information,
-              operational processes, technology, and communication work together.
-            </p>
-</div>
-</div>
-<div class="about-card">
-          I have supported teams in financial controlling, lending, accounting, bid administration, human resources, and digital media. Across each role, I have focused on accuracy, organization, clear communication, and finding practical ways to make work easier for the people around me. I am especially interested in financial analysis, process improvement, automation, and presenting data in a way that helps stakeholders make informed decisions. At Citi, I applied those interests by analyzing large datasets of accounting entries across multiple functions to help build a repeatable ownership-assignment model for a new, centralized controller organizational structure. Alongside my financial analysis work, I explored how AI could improve workflows by designing interactive HTML dashboards and automation tools that transformed complex data into more intuitive, visual insights.
-        </div>
-</div>
-</section>
-<section id="experience">
-<div class="container">
-<div class="section-heading">
-<div class="section-number">02 — Experience</div>
-<div>
-<h2>Professional experience</h2>
-<p>
-              A progression of roles spanning financial services, accounting, operations, and business support.
-            </p>
-</div>
-</div>
-<div class="experience-list">
-<article class="experience-card citi-experience-card">
-<div class="experience-meta">
-<strong>June 2026 — August 2026</strong>
-              Buffalo, NY
-            </div>
-<div>
-<h3>Finance Summer Analyst</h3>
-<div class="company">Citi — Banking &amp; Services Financial Controllers</div>
-<ul>
-<li><strong>Supported the Enterprise Financial Controllers (EFC) build-out</strong> by analyzing, profiling, and consolidating ledger adjustments to help transition the bank from a decentralized, high-risk manual reporting structure to a centralized, controlled, and efficient operating model.</li>
-<li><strong>Leveraged Citi AI tools and Microsoft Excel</strong> to improve workflow efficiency, organize complex financial data, and support financial analysis.</li>
-<li><strong>Collaborated with professionals across multiple organizational levels</strong> to understand their roles, shadow day-to-day responsibilities, and gain insight into Citi's business operations and matrixed organizational structure.</li>
-<li><strong>Analyzed large datasets of accounting entries across multiple functions</strong> to develop a standardized ownership-assignment model supporting Citi's Enterprise Financial Controllers transformation.</li>
-<li><strong>Developed advanced data analysis, financial controls, and problem-solving skills</strong> through hands-on execution within Citi's centralized financial control organization.</li>
-</ul>
-<div class="citi-divider">──────────── ✦ ────────────</div>
-<button class="button secondary project-open-button" onclick="openCitiProject()" type="button">
-                View Project →
-              </button>
-</div>
-</article>
-<article class="experience-card">
-<div class="experience-meta">
-<strong>December 2025 — February 2026</strong>
-              Tonawanda, NY
-            </div>
-<div>
-<h3>Bid Administrator</h3>
-<div class="company">Hohl Industrial Services</div>
-<ul>
-<li>Managed the timely and accurate delivery of bid proposals to existing and prospective clients.</li>
-<li>Served as a resource for project managers throughout the bid process.</li>
-</ul>
-</div>
-</article>
-<article class="experience-card">
-<div class="experience-meta">
-<strong>May 2025 — August 2025</strong>
-              Williamsville, NY
-            </div>
-<div>
-<h3>Finance Intern</h3>
-<div class="company">Targeted Lending Co.</div>
-<ul>
-<li>Researched state usury laws, maximum interest-rate limits, and differences between business and consumer lending.</li>
-<li>Prepared loan files, credit applications, title packages, collateral documents, and other lending materials.</li>
-<li>Tracked collateral status and managed documentation using LeasePath CRM.</li>
-<li>Assisted with reviewing client financial statements to evaluate repayment risk.</li>
-</ul>
-</div>
-</article>
-<article class="experience-card">
-<div class="experience-meta">
-<strong>May 2024 — August 2024</strong>
-              Amherst, NY
-            </div>
-<div>
-<h3>Accounting Intern</h3>
-<div class="company">The ZLC Group CPAs</div>
-<ul>
-<li>Completed balance-sheet reconciliations, supported year-end close activities, and processed accounts payable transactions.</li>
-<li>Used GoFileRoom and Practice CS to maintain organized and accurate financial records.</li>
-</ul>
-</div>
-</article>
-<article class="experience-card">
-<div class="experience-meta">
-<strong>June 2022 — August 2022</strong>
-              Tonawanda, NY
-            </div>
-<div>
-<h3>Human Resources Intern</h3>
-<div class="company">Hohl Industrial Services</div>
-<ul>
-<li>Updated and redesigned employee-handbook content to make policies easier to understand.</li>
-<li>Coordinated more than 10 interviews and supported job posting, screening, and scheduling activities.</li>
-<li>Organized W-2s, I-9s, and other onboarding and employee records.</li>
-</ul>
-</div>
-</article>
-</div>
-</div>
-</section>
-<section id="skills">
-<div class="container">
-<div class="section-heading">
-<div class="section-number">03 — Skills</div>
-<div>
-<h2>Tools and strengths</h2>
-<p>
-              A combination of financial, technical, organizational, and communication capabilities.
-            </p>
-</div>
-</div>
-<div class="skills-grid">
-<div class="skill-card">
-<h3>Finance &amp; Analysis</h3>
-<div class="tags">
-<span class="tag" data-description="Experience reviewing large financial datasets, identifying patterns, and presenting findings clearly." data-skill="Financial analysis" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Financial analysis</span>
-<span class="tag" data-description="Experience applying Financial statements across finance, technology, or process-focused work." data-skill="Financial statements" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Financial statements</span>
-<span class="tag" data-description="Experience applying Balance-sheet reconciliation across finance, technology, or process-focused work." data-skill="Balance-sheet reconciliation" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Balance-sheet reconciliation</span>
-<span class="tag" data-description="Experience applying Credit review across finance, technology, or process-focused work." data-skill="Credit review" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Credit review</span>
-<span class="tag" data-description="Experience applying Risk evaluation across finance, technology, or process-focused work." data-skill="Risk evaluation" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Risk evaluation</span>
-</div>
-</div>
-<div class="skill-card">
-<h3>Technology</h3>
-<div class="tags">
-<span class="tag" data-description="Used for data organization, reconciliation, analysis, workflow improvement, and large-scale financial reviews." data-skill="Microsoft Excel" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Microsoft Excel</span>
-<span class="tag" data-description="Experience applying PowerPoint across finance, technology, or process-focused work." data-skill="PowerPoint" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">PowerPoint</span>
-<span class="tag" data-description="Experience applying Word across finance, technology, or process-focused work." data-skill="Word" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Word</span>
-<span class="tag" data-description="Experience applying WordPress across finance, technology, or process-focused work." data-skill="WordPress" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">WordPress</span>
-<span class="tag" data-description="Experience applying LeasePath CRM across finance, technology, or process-focused work." data-skill="LeasePath CRM" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">LeasePath CRM</span>
-<span class="tag" data-description="Experience applying AI platforms across finance, technology, or process-focused work." data-skill="AI platforms" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">AI platforms</span>
-<span class="tag" data-description="Used to explore faster drafting, analysis, workflow support, and productivity improvements." data-skill="Copilot" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Copilot</span><span class="tag" data-description="Used to prototype HTML tools, dashboards, training materials, and process-automation concepts." data-skill="ChatGPT" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">ChatGPT</span><span class="tag" data-description="Used to explore AI-assisted writing, coding, analysis, and structured problem solving." data-skill="Claude" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Claude</span><span class="tag" data-description="Used as part of AI-enabled workflow exploration and digital tool development." data-skill="Stylus" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Stylus</span><span class="tag" data-description="Used to maintain organized accounting and client documentation." data-skill="GoFileRoom" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">GoFileRoom</span></div>
-</div>
-<div class="skill-card">
-<h3>Professional Strengths</h3>
-<div class="tags">
-<span class="tag" data-description="Presented work, gathered requirements, and collaborated with professionals across organizational levels." data-skill="Communication" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Communication</span>
-<span class="tag" data-description="Experience applying Organization across finance, technology, or process-focused work." data-skill="Organization" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Organization</span>
-<span class="tag" data-description="Experience applying Adaptability across finance, technology, or process-focused work." data-skill="Adaptability" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Adaptability</span>
-<span class="tag" data-description="Experience applying Collaboration across finance, technology, or process-focused work." data-skill="Collaboration" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Collaboration</span>
-<span class="tag" data-description="Focused on turning manual or one-time tasks into clearer, repeatable processes." data-skill="Process improvement" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Process improvement</span>
-<span class="tag" data-description="Experience applying Attention to detail across finance, technology, or process-focused work." data-skill="Attention to detail" onclick="showSkillDetail(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showSkillDetail(this)}" role="button" tabindex="0">Attention to detail</span>
-</div>
-</div>
-</div><div class="skill-detail-panel" id="skillDetailPanel"><h3>Select a skill</h3><p>Click or tap any skill to see how I have applied it.</p></div>
-</div>
-</section>
-<div aria-hidden="true" class="section-divider-art">
-<span class="cloud left"></span><span class="cloud right"></span>
-<span class="tiny-star a">✦</span><span class="tiny-star b">⋆</span>
-<span class="tiny-star c">✧</span><span class="tiny-star d">✦</span>
-</div>
-<section id="projects">
-<div class="container">
-<div class="section-heading">
-<div class="section-number">04 — Featured Projects</div>
-<div>
-<h2>Selected work across finance, technology, and process improvement.</h2>
-<p>These projects show how I organize complex information, collaborate with stakeholders, and create repeatable solutions that improve clarity and efficiency.</p>
-</div>
-</div>
-<div class="project-grid">
-<article class="project-card featured">
-<div class="project-kicker">Citi Financial Controllers</div>
-<h3>Accounting Entry Ownership Model</h3>
-<div class="project-metrics">
-<span><strong>75,000</strong> accounting entries</span>
-<span><strong>200</strong> function leads</span>
-<span><strong>1</strong> pilot review</span>
-</div>
-<p>
-          Supported Citi’s Enterprise Financial Controllers transformation by analyzing high-volume
-          accounting activity, piloting a new ownership review, and creating a standardized framework
-          for assigning ledger adjustments within the centralized controller organization.
-        </p>
-<button class="button secondary project-open-button" onclick="openCitiProject()" type="button">
-          View Full Case Study →
-        </button>
-</article>
-<article class="project-card">
-<div class="project-kicker">AI + Process Automation</div>
-<h3>Interactive HTML Workflow Tools</h3>
-<p>Designed HTML-based tools that organize information, automate repetitive steps, and make complex workflows easier for users to complete.</p>
-<div class="project-tags"><span>Artificial intelligence</span><span>HTML</span><span>Process design</span><span>User experience</span></div>
-</article>
-<article class="project-card">
-<div class="project-kicker">Bid Administration</div>
-<h3>Bid Proposal Automation Concept</h3>
-<p>Developed a concept for simplifying the bid proposal process by pulling information from scope letters, completing proposal templates, and preparing customer emails in one workflow.</p>
-<div class="project-tags"><span>Automation</span><span>Document workflow</span><span>Efficiency</span></div>
-</article>
-</div>
-</div>
-</section>
-<section id="education">
-<div class="container">
-<div class="section-heading">
-<div class="section-number">05 — Education</div>
-<div>
-<h2>Education and leadership</h2>
-<p>
-              Academic experience supported by involvement in finance, professional development, and community-focused organizations.
-            </p>
-</div>
-</div>
-<div class="two-column">
-<div class="info-card">
-<h3>Binghamton University, SUNY</h3>
-<div class="subline">School of Management</div>
-<p>
-              Bachelor of Science in Business Administration<br/>
-              Concentration in Finance<br/>
-              Expected May 2027
-            </p>
-</div>
-<div class="info-card">
-<h3>University of Tennessee, Knoxville</h3>
-<div class="subline">Haslam College of Business</div>
-<p>
-              Finance studies<br/>
-              August 2023 — May 2024
-            </p>
-</div>
-</div>
-<div class="leadership-list" style="margin-top: 20px;">
-<div class="leadership-item">
-<h3>Zeta Tau Alpha</h3>
-<p>
-              Helped organize and participate in fundraising events that supported local nonprofits and breast cancer research,
-              contributing to more than $100,000 raised as a group.
-            </p>
-</div>
-<div class="leadership-item">
-<h3>Women in Finance &amp; Women of Haslam</h3>
-<p>
-              Participated in professional-development meetings, alumni networking, speaker events, and activities focused on finance careers.
-            </p>
-</div>
-</div>
-</div>
-</section>
-<section id="contact">
-<div class="container">
-<div class="contact-card">
-<div>
-<h2>Let’s connect.</h2>
-</div>
-<div class="contact-links">
-<a class="contact-link" href="mailto:kmacrides4@gmail.com">kmacrides4@gmail.com</a>
-<!-- Replace the # below with your LinkedIn profile URL -->
-<div class="contact-link">LinkedIn: Karli Macrides</div></div>
-</div>
-</div>
-</section>
-<div aria-hidden="true" class="nyc-bottom-city">
-<div class="nyc-skyline">
-<svg preserveaspectratio="xMidYMax meet" viewbox="0 0 1600 520">
-<g class="nyc-line">
-<!-- foreground brownstones -->
-<path d="M0 430 V250 H85 V430 M85 430 V210 H175 V430 M175 430 V270 H255 V430 M255 430 V225 H350 V430 M350 430 V265 H430 V430 M430 430 V205 H525 V430 M525 430 V250 H610 V430 M610 430 V180 H710 V430 M710 430 V250 H795 V430 M795 430 V215 H895 V430 M895 430 V260 H980 V430 M980 430 V195 H1085 V430 M1085 430 V245 H1170 V430 M1170 430 V220 H1275 V430 M1275 430 V250 H1360 V430 M1360 430 V205 H1460 V430 M1460 430 V265 H1600"></path>
-<!-- skyline -->
-<path d="M40 250 V160 H95 V250 M115 210 V125 H160 V210 M210 270 V145 H260 V270 M300 225 V95 H355 V225 M390 265 V150 H440 V265 M470 205 V80 H520 V205 M560 250 V130 H610 V250 M645 180 V45 H705 V180 M740 250 V105 H790 V250 M830 215 V75 H885 V215 M920 260 V145 H970 V260 M1015 195 V30 H1075 V195 M1110 245 V120 H1160 V245 M1200 220 V85 H1260 V220 M1300 250 V135 H1350 V250 M1390 205 V55 H1450 V205 M1490 265 V150 H1540 V265"></path>
-<!-- iconic spires -->
-<path d="M667 45 L675 0 L683 45 M1038 30 L1046 0 L1054 30 M1412 55 L1420 10 L1428 55"></path>
-<path d="M312 95 L327 55 L342 95 M478 80 L495 38 L512 80 M1214 85 L1230 42 L1246 85"></path>
-<!-- windows -->
-<path d="M20 300 H65 M20 335 H65 M20 370 H65 M100 255 H155 M100 295 H155 M100 335 H155 M190 310 H240 M190 345 H240 M275 270 H335 M275 305 H335 M275 340 H335 M370 305 H415 M370 340 H415 M445 250 H505 M445 290 H505 M445 330 H505 M540 290 H595 M540 325 H595 M625 225 H690 M625 265 H690 M625 305 H690 M725 290 H780 M725 325 H780 M810 255 H875 M810 295 H875 M810 335 H875 M910 300 H965 M910 335 H965 M995 240 H1070 M995 280 H1070 M995 320 H1070 M1100 285 H1155 M1100 325 H1155 M1185 265 H1260 M1185 305 H1260 M1290 295 H1345 M1290 335 H1345 M1375 250 H1450 M1375 290 H1450 M1375 330 H1450 M1475 305 H1550 M1475 345 H1550"></path>
-<!-- streetlamps -->
-<path d="M90 430 V290 M78 290 H102 M82 290 Q90 275 98 290 M1510 430 V285 M1498 285 H1522 M1502 285 Q1510 270 1518 285"></path>
-<!-- street signs -->
-<path d="M110 360 V430 M68 340 H152 V365 H68 Z M72 305 H148 V330 H72 Z"></path>
-<path d="M72 353 H147 M75 318 H145"></path>
-<!-- trees -->
-<path d="M230 430 V380 M230 382 C190 360 195 325 230 312 C265 325 270 360 230 382"></path>
-<path d="M1160 430 V375 M1160 378 C1120 356 1125 322 1160 308 C1195 322 1200 356 1160 378"></path>
-<path d="M1325 430 V380 M1325 382 C1285 360 1290 325 1325 312 C1360 325 1365 360 1325 382"></path>
-<!-- rail and sidewalk -->
-<path d="M0 430 H1600 M0 446 H1600 M0 464 H1600"></path>
-<path d="M0 420 H1600 M35 420 V445 M70 420 V445 M105 420 V445 M140 420 V445 M175 420 V445 M210 420 V445 M245 420 V445 M280 420 V445 M315 420 V445 M350 420 V445 M385 420 V445 M420 420 V445 M455 420 V445 M490 420 V445 M525 420 V445 M560 420 V445 M595 420 V445 M630 420 V445 M665 420 V445 M700 420 V445 M735 420 V445 M770 420 V445 M805 420 V445 M840 420 V445 M875 420 V445 M910 420 V445 M945 420 V445 M980 420 V445 M1015 420 V445 M1050 420 V445 M1085 420 V445 M1120 420 V445 M1155 420 V445 M1190 420 V445 M1225 420 V445 M1260 420 V445 M1295 420 V445 M1330 420 V445 M1365 420 V445 M1400 420 V445 M1435 420 V445 M1470 420 V445 M1505 420 V445 M1540 420 V445 M1575 420 V445"></path>
-</g>
-</svg>
-</div>
-<div class="nyc-road"></div>
-<div class="nyc-car">
-<svg viewbox="0 0 170 75">
-<g class="nyc-line">
-<path d="M8 49 L24 27 H103 L130 49 H158 L164 59 H8 Z"></path>
-<path d="M47 27 L60 10 H98 L117 27"></path>
-<circle cx="47" cy="60" r="11"></circle><circle cx="132" cy="60" r="11"></circle>
-<path d="M68 14 V27 M99 14 V27 M18 49 H154"></path>
-<circle cx="47" cy="60" r="4"></circle><circle cx="132" cy="60" r="4"></circle>
-</g>
-</svg>
-</div>
-<div class="nyc-car two">
-<svg viewbox="0 0 160 75">
-<g class="nyc-line">
-<path d="M8 49 L23 29 H95 L118 49 H148 L154 59 H8 Z"></path>
-<path d="M43 29 L54 12 H90 L107 29"></path>
-<circle cx="43" cy="60" r="11"></circle><circle cx="124" cy="60" r="11"></circle>
-<path d="M61 16 V29 M91 16 V29 M18 49 H145"></path>
-<circle cx="43" cy="60" r="4"></circle><circle cx="124" cy="60" r="4"></circle>
-</g>
-</svg>
-</div>
-<div class="nyc-car three">
-<svg viewbox="0 0 190 78">
-<g class="nyc-line">
-<path d="M8 51 L25 28 H122 L148 51 H178 L184 61 H8 Z"></path>
-<path d="M54 28 L68 9 H115 L136 28"></path>
-<circle cx="52" cy="62" r="12"></circle><circle cx="151" cy="62" r="12"></circle>
-<path d="M78 14 V28 M116 14 V28 M20 51 H174"></path>
-<circle cx="52" cy="62" r="4"></circle><circle cx="151" cy="62" r="4"></circle>
-</g>
-</svg>
-</div>
-</div>
-</main>
-<footer>
-<div class="container">
-      © <span id="year"></span> Karli Macrides. Built as a professional portfolio.
+<div style="width: 100%; background: #E5DFD7; color: #1C1B1A; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.6">
+
+  <!-- NAV -->
+  <header style="max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between">
+    <a href="#top" style="font-family: 'Pinyon Script', cursive; font-size: 34px; line-height: 1; text-decoration: none">Karli Macrides</a>
+    <nav aria-label="Primary" style="display: flex; flex-wrap: wrap; gap: 8px 32px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase">
+      <a href="#about" style="text-decoration: none; padding: 12px 0">About</a>
+      <a href="#work" style="text-decoration: none; padding: 12px 0">Work</a>
+      <a href="#experience" style="text-decoration: none; padding: 12px 0">Experience</a>
+      <a href="#contact" style="text-decoration: none; padding: 12px 0">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 0; text-align: center">
+    <p style="margin: 0 0 12px; font-family: 'Cormorant Garamond', serif; font-size: 15px; letter-spacing: 0.3em; text-transform: uppercase; color: #5A544D">Portfolio</p>
+    <h1 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(52px, 10vw, 140px); line-height: 0.95; letter-spacing: 0.02em; text-transform: uppercase">Karli Macrides</h1>
+    <div style="position: relative; margin-top: 40px">
+      
+      <div style="margin-top: -24px; height: clamp(320px, 38vw, 520px); border-radius: 28px 28px 0 0; background: #C8C2B9; display: flex; align-items: flex-end; justify-content: center; padding-top: 56px; box-sizing: border-box; overflow: hidden">
+        <img src="assets/karli-portrait.jpg" alt="Portrait of Karli Macrides" style="height: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%; display: block; transform: translateY(12%); box-shadow: 0 0 0 10px #E5DFD7">
+      </div>
+      <div aria-hidden="true" style="position: absolute; right: 32px; top: 40px; width: 104px; height: 104px; border-radius: 50%; background: #E5DFD7; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; line-height: 1.3">Class of<br>2027</div>
     </div>
-</footer>
+  </section>
+
+  <!-- ABOUT ON STRIPES -->
+  <section id="about" style="background: #1F1E1D; color: #EDE8E1; padding: 96px 24px">
+    <div style="max-width: 1040px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch">
+      
+      <div style="flex: 999 1 480px; min-width: 0; background: #2A2826; border: 1px solid #4A4642; border-radius: 16px; padding: 48px">
+        <h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 44px; line-height: 1.1">About <span style="font-family: 'Pinyon Script', cursive; font-size: 52px">Karli</span></h2>
+        <blockquote style="margin: 28px 0 0; padding: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.3; color: #EDE8E1">“I’m happiest when I’m handed something messy: a mountain of data, a process no one has questioned, or a tool that doesn’t exist yet.”</blockquote>
+        <p style="margin: 24px 0 0; color: #D6CFC6; max-width: 644px">I’m a finance student at Binghamton University’s School of Management and, at heart, a problem solver. Give me a tangled challenge and I’ll find a smarter, more creative way through it.</p>
+        <p style="margin: 16px 0 0; color: #D6CFC6">That mindset has carried me through internships in financial control, lending, accounting, and operations, and it’s what I bring to every team I join.</p>
+        <p style="margin: 16px 0 0; color: #D6CFC6">I’m always looking for the next thing to learn. Recently, that meant teaching myself to build interactive tools with AI from scratch, then sharing what I learned so others could do the same.</p>
+        <p style="margin: 28px 0 12px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #B5ADA3">What drives me</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <span style="border: 1px solid #6A645D; border-radius: 999px; padding: 6px 14px; font-size: 13px">Creative problem solving</span>
+          <span style="border: 1px solid #6A645D; border-radius: 999px; padding: 6px 14px; font-size: 13px">Always learning</span>
+          <span style="border: 1px solid #6A645D; border-radius: 999px; padding: 6px 14px; font-size: 13px">Making complex work simple</span>
+          <span style="border: 1px solid #6A645D; border-radius: 999px; padding: 6px 14px; font-size: 13px">Helping others grow</span>
+        </div>
+        <hr style="margin: 32px 0; border: none; border-top: 1px solid #4A4642">
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; text-align: center">
+          <div><div style="font-family: 'Cormorant Garamond', serif; font-size: 18px">School</div><div style="font-size: 13px; color: #B5ADA3">Binghamton SOM</div></div>
+          <div><div style="font-family: 'Cormorant Garamond', serif; font-size: 18px">Degree</div><div style="font-size: 13px; color: #B5ADA3">BS Business Administration, Concentration in Finance</div></div>
+          <div><div style="font-family: 'Cormorant Garamond', serif; font-size: 18px">Graduating</div><div style="font-size: 13px; color: #B5ADA3">May 2027</div></div>
+          <div><div style="font-family: 'Cormorant Garamond', serif; font-size: 18px">Based in</div><div style="font-size: 13px; color: #B5ADA3">Buffalo, NY</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section id="work" style="max-width: 1200px; margin: 0 auto; padding: 120px 24px 80px">
+    <div style="text-align: center; margin-bottom: 64px">
+      <p style="margin: 0; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #5A544D">Selected Work</p>
+      <h2 style="margin: 8px 0 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(40px, 6vw, 72px); line-height: 1; text-transform: uppercase">Projects</h2>
+    </div>
+
+    <!-- Project 1 -->
+    <article style="background: #F4F0EA; border-radius: 24px; padding: clamp(28px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 380px; min-width: 0">
+        <p style="margin: 0; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5A544D">01 · Citi · Banking &amp; Services Financial Controllers</p>
+        <h3 style="margin: 16px 0 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(32px, 4vw, 48px); line-height: 1.05">Enterprise Financial Controllers Build-Out</h3>
+        <p style="margin: 20px 0 0; color: #3D3934">As Citi moved toward a centralized Enterprise Financial Control (EFC) operating model, there was no consistent way to decide who should own and review manual accounting adjustments. I analyzed the full population of entries, piloted an ownership review on the highest-volume function lead, and turned it into a repeatable framework.</p>
+        <ol style="margin: 32px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px">
+          <li style="display: flex; gap: 16px"><span style="font-family: 'Cormorant Garamond', serif; font-size: 20px; width: 28px; flex: none">i.</span><span><strong style="font-weight: 600">Organized the data</strong> — structured ledger-adjustment activity in Excel with pivots and lookups.</span></li>
+          <li style="display: flex; gap: 16px"><span style="font-family: 'Cormorant Garamond', serif; font-size: 20px; width: 28px; flex: none">ii.</span><span><strong style="font-weight: 600">Profiled &amp; segmented</strong> — volume, existing ownership, and gaps across 198 managers, then isolated Banking &amp; Services activity.</span></li>
+          <li style="display: flex; gap: 16px"><span style="font-family: 'Cormorant Garamond', serif; font-size: 20px; width: 28px; flex: none">iii.</span><span><strong style="font-weight: 600">Piloted</strong> — focused a review on the highest-volume function lead, matching their year-end entries against recent data and asking targeted questions on ownership, recurrence, calculations, accountability, and limitations.</span></li>
+          <li style="display: flex; gap: 16px"><span style="font-family: 'Cormorant Garamond', serif; font-size: 20px; width: 28px; flex: none">iv.</span><span><strong style="font-weight: 600">Validated</strong> — confirmed roles with controllers and regional managers.</span></li>
+          <li style="display: flex; gap: 16px"><span style="font-family: 'Cormorant Garamond', serif; font-size: 20px; width: 28px; flex: none">v.</span><span><strong style="font-weight: 600">Standardized</strong> — built a template and targeted review questions for future reviews.</span></li>
+        </ol>
+      </div>
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+        <p style="margin: 0 0 8px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5A544D">How I narrowed the data</p>
+        <div style="background: #1F1E1D; color: #EDE8E1; border-radius: 16px; padding: 28px 32px">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 52px; line-height: 1">74,774</div>
+          <div style="font-size: 14px; color: #B5ADA3; margin-top: 6px">Entries in the total ledger population · 4,721 transactions · 198 managers</div>
+        </div>
+        <div style="background: #C9BFB2; border-radius: 16px; padding: 24px 32px; margin: 0 24px">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 44px; line-height: 1">13,537</div>
+          <div style="font-size: 14px; color: #3D3934; margin-top: 6px">Entries in the Banking &amp; Services segment · 1,237 transactions · 18 managers</div>
+        </div>
+        <div style="background: #FFFFFF; border: 1.5px solid #1C1B1A; border-radius: 16px; padding: 20px 32px; margin: 0 48px">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 38px; line-height: 1">370</div>
+          <div style="font-size: 14px; color: #3D3934; margin-top: 6px">Entries in the pilot review · 90 transactions · 1 function lead</div>
+        </div>
+        <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px">
+          <span style="border: 1px solid #1C1B1A; border-radius: 999px; padding: 6px 14px; font-size: 13px">Excel</span>
+          <span style="border: 1px solid #1C1B1A; border-radius: 999px; padding: 6px 14px; font-size: 13px">Citi AI tools</span>
+          <span style="border: 1px solid #1C1B1A; border-radius: 999px; padding: 6px 14px; font-size: 13px">Financial controls</span>
+          <span style="border: 1px solid #1C1B1A; border-radius: 999px; padding: 6px 14px; font-size: 13px">Stakeholder collaboration</span>
+        </div>
+      </div>
+      <div style="flex: 1 1 100%; border-top: 1px solid #D4CDC3; padding-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px">
+        <div>
+          <p style="margin: 0 0 12px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5A544D">Results</p>
+          <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; color: #3D3934; font-size: 15px">
+            <li>Organized and segmented all activity relevant to Banking &amp; Services.</li>
+            <li>Mapped the pilot lead’s year-end entries against recent data to show where each belongs in the new structure.</li>
+            <li>Created a standardized template the team can replicate across the other Banking &amp; Services function leads.</li>
+          </ul>
+        </div>
+        <div>
+          <p style="margin: 0 0 12px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5A544D">Skills developed</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="background: #FFFFFF; border-radius: 999px; padding: 6px 14px; font-size: 13px">Problem solving</span>
+            <span style="background: #FFFFFF; border-radius: 999px; padding: 6px 14px; font-size: 13px">Stakeholder communication</span>
+            <span style="background: #FFFFFF; border-radius: 999px; padding: 6px 14px; font-size: 13px">Data analysis</span>
+            <span style="background: #FFFFFF; border-radius: 999px; padding: 6px 14px; font-size: 13px">Incorporating AI tools</span>
+          </div>
+        </div>
+        <div>
+          <p style="margin: 0 0 12px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5A544D">Key takeaway</p>
+          <p style="margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; line-height: 1.3">“The most effective way to solve a complex problem is to start small, learn from the results, and then scale the approach.”</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 2 -->
+    <article style="margin-top: 32px; background: #F4F0EA; border-radius: 24px; padding: clamp(28px, 5vw, 64px)">
+      <p style="margin: 0; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5A544D">02 · Citi · Technical initiative</p>
+      <h3 style="margin: 16px 0 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(32px, 4vw, 48px); line-height: 1.05">AI Dashboards &amp; Workflow Automation</h3>
+      <p style="margin: 20px 0 0; max-width: 760px; color: #3D3934">Before this internship, I had never built an HTML file. By the end of the summer, I was using AI to build interactive tools that automate repetitive tasks and visualize data in new ways. I then built an interactive walkthrough to teach colleagues with little or no coding experience to do the same. I presented it to 30+ employees across Citi teams, and it was later used in Citi AI training.</p>
+
+      <p style="margin: 48px 0 8px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5A544D">The walkthrough</p>
+      <p style="margin: 0 0 20px; max-width: 720px; color: #3D3934">Below is a recreated preview of the interactive presentation I built. Click through the pages to see what I covered.</p>
+      <div style="border: 1.5px solid #1C1B1A; border-radius: 16px; overflow: hidden; background: #FFFFFF">
+        <div style="background: #1F1E1D; color: #EDE8E1; padding: 12px 20px; display: flex; align-items: center; gap: 16px">
+          <div aria-hidden="true" style="display: flex; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #6A645D"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #6A645D"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #6A645D"></span></div>
+          <div style="font-size: 13px; color: #D6CFC6">Building Tools with AI: An Interactive Walkthrough</div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap">
+          <nav id="wt-nav" aria-label="Walkthrough pages" style="flex: 1 1 240px; background: #ECE7E0; padding: 12px; display: flex; flex-direction: column; gap: 4px">
+          </nav>
+          <div style="flex: 999 1 380px; min-width: 0; padding: clamp(24px, 4vw, 40px); min-height: 340px; box-sizing: border-box">
+            <div style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5A544D">Page <span id="wt-num">1</span> of <span id="wt-total">7</span></div>
+            <div style="margin-top: 8px; font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 3.4vw, 40px); line-height: 1.1"><span id="wt-title"></span></div>
+            <p style="margin: 12px 0 0; max-width: 560px; color: #3D3934"><span id="wt-lead"></span></p>
+            <div id="wt-house">
+            <div style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px">
+
+              <div style="background: #F4F0EA; border-radius: 12px; padding: 16px">
+                <svg role="img" aria-label="House frame: bare beams with no paint" viewBox="0 0 200 170" style="width: 100%; height: auto; display: block">
+                  <polygon points="30,82 100,30 170,82" fill="none" stroke="#1C1B1A" stroke-width="2" stroke-linejoin="round"></polygon>
+                  <line x1="100" y1="30" x2="100" y2="82" stroke="#8A8278" stroke-width="1.5" stroke-dasharray="4 4"></line>
+                  <line x1="65" y1="56" x2="135" y2="56" stroke="#8A8278" stroke-width="1.5" stroke-dasharray="4 4"></line>
+                  <rect x="40" y="82" width="120" height="78" fill="none" stroke="#1C1B1A" stroke-width="2"></rect>
+                  <line x1="70" y1="82" x2="70" y2="160" stroke="#8A8278" stroke-width="1.5" stroke-dasharray="4 4"></line>
+                  <line x1="130" y1="82" x2="130" y2="160" stroke="#8A8278" stroke-width="1.5" stroke-dasharray="4 4"></line>
+                  <line x1="40" y1="121" x2="160" y2="121" stroke="#8A8278" stroke-width="1.5" stroke-dasharray="4 4"></line>
+                  <rect x="52" y="95" width="26" height="22" fill="none" stroke="#1C1B1A" stroke-width="1.5"></rect>
+                  <rect x="122" y="95" width="26" height="22" fill="none" stroke="#1C1B1A" stroke-width="1.5"></rect>
+                  <rect x="88" y="115" width="24" height="45" fill="none" stroke="#1C1B1A" stroke-width="1.5"></rect>
+                  <line x1="20" y1="160" x2="180" y2="160" stroke="#1C1B1A" stroke-width="2"></line>
+                </svg>
+                <div style="margin-top: 10px; font-family: 'Cormorant Garamond', serif; font-size: 22px; line-height: 1.1">HTML</div>
+                <div style="margin-top: 2px; font-size: 13px; color: #5A544D">The frame: walls, doors and windows, behind the scenes.</div>
+              </div>
+
+              <div style="background: #F4F0EA; border-radius: 12px; padding: 16px">
+                <svg role="img" aria-label="Painted, decorated house" viewBox="0 0 200 170" style="width: 100%; height: auto; display: block">
+                  <rect x="40" y="82" width="120" height="78" fill="#D9CFC2" stroke="#1C1B1A" stroke-width="2"></rect>
+                  <polygon points="30,82 100,30 170,82" fill="#1F1E1D" stroke="#1C1B1A" stroke-width="2" stroke-linejoin="round"></polygon>
+                  <circle cx="100" cy="64" r="7" fill="#F4F0EA" stroke="#C9BFB2" stroke-width="1.5"></circle>
+                  <rect x="52" y="95" width="26" height="22" fill="#A9C4D6" stroke="#FFFFFF" stroke-width="3"></rect>
+                  <rect x="122" y="95" width="26" height="22" fill="#A9C4D6" stroke="#FFFFFF" stroke-width="3"></rect>
+                  <rect x="88" y="115" width="24" height="45" rx="2" fill="#8A5A3C"></rect>
+                  <circle cx="107" cy="139" r="1.8" fill="#E8C66A"></circle>
+                  <circle cx="50" cy="157" r="9" fill="#7A8B6A"></circle><circle cx="62" cy="159" r="7" fill="#8E9E7C"></circle>
+                  <circle cx="150" cy="157" r="9" fill="#7A8B6A"></circle><circle cx="138" cy="159" r="7" fill="#8E9E7C"></circle>
+                  <line x1="20" y1="160" x2="180" y2="160" stroke="#1C1B1A" stroke-width="2"></line>
+                </svg>
+                <div style="margin-top: 10px; font-family: 'Cormorant Garamond', serif; font-size: 22px; line-height: 1.1">CSS</div>
+                <div style="margin-top: 2px; font-size: 13px; color: #5A544D">The paint and decorations: colors, fonts and spacing.</div>
+              </div>
+
+              <div id="wt-jscard" style="background: #F4F0EA; border-radius: 12px; padding: 16px; transition: background 0.3s">
+                <div style="position: relative">
+                  <svg role="img" aria-label="Interactive house with working lights and doorbell" viewBox="0 0 200 170" style="width: 100%; height: auto; display: block">
+                    <rect x="40" y="82" width="120" height="78" fill="#D9CFC2" stroke="#1C1B1A" stroke-width="2"></rect>
+                    <polygon points="30,82 100,30 170,82" fill="#1F1E1D" stroke="#1C1B1A" stroke-width="2" stroke-linejoin="round"></polygon>
+                    <circle cx="100" cy="64" r="7" class="wt-win" fill="#3A3734" stroke="#C9BFB2" stroke-width="1.5"></circle>
+                    <rect x="52" y="95" width="26" height="22" class="wt-win" fill="#3A3734" stroke="#FFFFFF" stroke-width="3"></rect>
+                    <rect x="122" y="95" width="26" height="22" class="wt-win" fill="#3A3734" stroke="#FFFFFF" stroke-width="3"></rect>
+                    <rect x="88" y="115" width="24" height="45" rx="2" fill="#8A5A3C"></rect>
+                    <circle cx="107" cy="139" r="1.8" fill="#E8C66A"></circle>
+                    <circle cx="121" cy="133" r="4" id="wt-bell" fill="#F4F0EA" stroke="#1C1B1A" stroke-width="1.2"></circle>
+                    <rect x="72" y="128" width="8" height="12" rx="1.5" fill="#F4F0EA" stroke="#1C1B1A" stroke-width="1"></rect>
+                    <rect x="74.5" id="wt-switch" y="134" width="3" height="4" fill="#1C1B1A"></rect>
+                    <circle cx="50" cy="157" r="9" fill="#7A8B6A"></circle><circle cx="62" cy="159" r="7" fill="#8E9E7C"></circle>
+                    <circle cx="150" cy="157" r="9" fill="#7A8B6A"></circle><circle cx="138" cy="159" r="7" fill="#8E9E7C"></circle>
+                    <line x1="20" y1="160" x2="180" y2="160" stroke="#1C1B1A" stroke-width="2"></line>
+                  </svg>
+                  <button type="button" data-act="ring" aria-label="Ring the doorbell" style="position: absolute; left: 60.5%; top: 78.2%; width: 32px; height: 32px; transform: translate(-50%, -50%); border-radius: 50%; border: none; background: transparent; cursor: pointer"></button>
+                  <button type="button" data-act="lights" aria-label="Flip the light switch" style="position: absolute; left: 38%; top: 79%; width: 32px; height: 32px; transform: translate(-50%, -50%); border-radius: 6px; border: none; background: transparent; cursor: pointer"></button>
+                  <div id="wt-ding" hidden>
+                    <div aria-live="polite" style="position: absolute; right: 2%; top: 30%; background: #1F1E1D; color: #EDE8E1; border-radius: 999px; padding: 4px 12px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; animation: kmDing 1.4s ease-out both">Ding dong!</div>
+                  </div>
+                </div>
+                <div style="margin-top: 10px; font-family: 'Cormorant Garamond', serif; font-size: 22px; line-height: 1.1">JavaScript</div>
+                <div style="margin-top: 2px; font-size: 13px; color: #5A544D">The electricity: it makes things happen. Try it:</div>
+                <div style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px">
+                  <button type="button" data-act="ring" style="min-height: 36px; padding: 6px 12px; border-radius: 999px; border: 1px solid #1C1B1A; background: #1F1E1D; color: #EDE8E1; font-family: inherit; font-size: 12px; cursor: pointer">Ring doorbell</button>
+                  <button type="button" data-act="lights" aria-pressed="false" style="min-height: 36px; padding: 6px 12px; border-radius: 999px; border: 1px solid #1C1B1A; background: #FFFFFF; color: #1C1B1A; font-family: inherit; font-size: 12px; cursor: pointer"><span class="wt-lightlabel">Lights on</span></button>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div id="wt-tiles" hidden style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px"></div>
+            <div style="margin-top: 28px; display: flex; gap: 8px">
+              <button type="button" data-act="prev" aria-label="Previous page" style="min-width: 44px; height: 44px; border-radius: 999px; border: 1px solid #1C1B1A; background: #FFFFFF; color: #1C1B1A; font-size: 16px; cursor: pointer">←</button>
+              <button type="button" data-act="next" aria-label="Next page" style="min-width: 44px; height: 44px; border-radius: 999px; border: 1px solid #1C1B1A; background: #1F1E1D; color: #EDE8E1; font-size: 16px; cursor: pointer">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin: 48px 0 16px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5A544D">My build loop</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+        <span style="background: #1F1E1D; color: #EDE8E1; border-radius: 999px; padding: 10px 20px; font-family: 'Cormorant Garamond', serif; font-size: 18px">Idea</span>
+        <span aria-hidden="true" style="color: #8A8278">→</span>
+        <span style="background: #1F1E1D; color: #EDE8E1; border-radius: 999px; padding: 10px 20px; font-family: 'Cormorant Garamond', serif; font-size: 18px">Prompt</span>
+        <span aria-hidden="true" style="color: #8A8278">→</span>
+        <span style="background: #1F1E1D; color: #EDE8E1; border-radius: 999px; padding: 10px 20px; font-family: 'Cormorant Garamond', serif; font-size: 18px">Test</span>
+        <span aria-hidden="true" style="color: #8A8278">→</span>
+        <span style="background: #1F1E1D; color: #EDE8E1; border-radius: 999px; padding: 10px 20px; font-family: 'Cormorant Garamond', serif; font-size: 18px">Refine</span>
+        <span aria-hidden="true" style="color: #8A8278">→</span>
+        <span style="background: #1F1E1D; color: #EDE8E1; border-radius: 999px; padding: 10px 20px; font-family: 'Cormorant Garamond', serif; font-size: 18px">Download</span>
+        <span aria-hidden="true" style="color: #8A8278">↺</span>
+        <span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: #5A544D">Repeat. The walkthrough itself went through several versions this way.</span>
+      </div>
+
+      <p style="margin: 48px 0 16px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5A544D">Tools I’ve built</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+        <div style="background: #FFFFFF; border-radius: 16px; padding: 28px">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; line-height: 1.15">Dashboard prompt builder</div>
+          <p style="margin: 10px 0 0; font-size: 14px; color: #5A544D">Helps colleagues write the right AI prompt to build their own dashboards, even with no coding experience.</p>
+        </div>
+        <div style="background: #FFFFFF; border-radius: 16px; padding: 28px">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; line-height: 1.15">Team Jeopardy game</div>
+          <p style="margin: 10px 0 0; font-size: 14px; color: #5A544D">A daily trivia game for my team at Citi. I prompted AI to generate five new questions each day, teammates answered them, and a live leaderboard showed who got the most right.</p>
+        </div>
+        <div style="background: #FFFFFF; border-radius: 16px; padding: 28px">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; line-height: 1.15">Resume analyzer</div>
+          <p style="margin: 10px 0 0; font-size: 14px; color: #5A544D">Upload a job posting, and it compares the role with my resume and experience, scores how strong a match it is, and highlights my strengths and gaps.</p>
+        </div>
+        <div style="background: #1F1E1D; color: #EDE8E1; border-radius: 16px; padding: 28px">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center"><span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; line-height: 1.15">Bid proposal generator</span><span style="border: 1px solid #6A645D; border-radius: 999px; padding: 2px 10px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase">In progress</span></div>
+          <p style="margin: 10px 0 0; font-size: 14px; color: #B5ADA3">Inspired by my role as a Bid Administrator. Upload a scope letter, and it drafts the full proposal and customer email in seconds.</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" style="max-width: 1040px; margin: 0 auto; padding: 120px 24px 80px">
+    <h2 style="margin: 0 0 48px; text-align: center; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(40px, 6vw, 72px); line-height: 1; text-transform: uppercase">Experience</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 28px 0; border-top: 1px solid #B9B0A5">
+      <div style="flex: 1 1 200px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5A544D">Jun – Aug 2026</div>
+      <div style="flex: 999 1 480px; min-width: 0"><div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 1.2">Citi <span style="font-style: italic">— Financial Analyst Intern</span></div><p style="margin: 6px 0 0; color: #3D3934">Supported the Banking &amp; Services Financial Controllers team in implementing a new Controller structure; analyzed 75,000+ manual adjustment entries. Used AI to build interactive HTML tools that automate repetitive tasks and visualize data, and taught 30+ colleagues to build their own.</p></div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 28px 0; border-top: 1px solid #B9B0A5">
+      <div style="flex: 1 1 200px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5A544D">Dec 2025 – Feb 2026</div>
+      <div style="flex: 999 1 480px; min-width: 0"><div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 1.2">Hohl Industrial Services <span style="font-style: italic">— Bid Administrator</span></div><p style="margin: 6px 0 0; color: #3D3934">Prepared and delivered 40+ customized bid proposals, coordinating final submissions with project managers.</p></div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 28px 0; border-top: 1px solid #B9B0A5">
+      <div style="flex: 1 1 200px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5A544D">May – Aug 2025</div>
+      <div style="flex: 999 1 480px; min-width: 0"><div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 1.2">Targeted Lending Co <span style="font-style: italic">— Finance Intern</span></div><p style="margin: 6px 0 0; color: #3D3934">Researched state usury laws, prepared loan and collateral files, and reviewed client financials to evaluate repayment risk.</p></div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 28px 0; border-top: 1px solid #B9B0A5">
+      <div style="flex: 1 1 200px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5A544D">May – Aug 2024</div>
+      <div style="flex: 999 1 480px; min-width: 0"><div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 1.2">The ZLC Group CPAs <span style="font-style: italic">— Accounting Intern</span></div><p style="margin: 6px 0 0; color: #3D3934">Balance sheet reconciliations, year-end close support, and accounts payable processing.</p></div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 28px 0; border-top: 1px solid #B9B0A5; border-bottom: 1px solid #B9B0A5">
+      <div style="flex: 1 1 200px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5A544D">Jun – Aug 2022</div>
+      <div style="flex: 999 1 480px; min-width: 0"><div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 1.2">Hohl Industrial Services <span style="font-style: italic">— Human Resources Intern</span></div><p style="margin: 6px 0 0; color: #3D3934">Redesigned the employee handbook and coordinated 10+ interviews.</p></div>
+    </div>
+    <div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center">
+      <span style="background: #F4F0EA; border-radius: 999px; padding: 8px 18px; font-size: 14px">Excel</span>
+      <span style="background: #F4F0EA; border-radius: 999px; padding: 8px 18px; font-size: 14px">PowerPoint</span>
+      <span style="background: #F4F0EA; border-radius: 999px; padding: 8px 18px; font-size: 14px">HTML / CSS / JS</span>
+      <span style="background: #F4F0EA; border-radius: 999px; padding: 8px 18px; font-size: 14px">Generative AI</span>
+      <span style="background: #F4F0EA; border-radius: 999px; padding: 8px 18px; font-size: 14px">Financial controls</span>
+      <span style="background: #F4F0EA; border-radius: 999px; padding: 8px 18px; font-size: 14px">Process improvement</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <footer id="contact" style="background: #1F1E1D; color: #EDE8E1; text-align: center; padding: 112px 24px 48px">
+    <p style="margin: 0; font-family: 'Pinyon Script', cursive; font-size: 48px; line-height: 1">Let’s</p>
+    <h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(48px, 8vw, 104px); line-height: 1; text-transform: uppercase">Connect</h2>
+    <div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center">
+      <a href="mailto:kmacrides4@gmail.com" style="color: #1F1E1D; background: #EDE8E1; text-decoration: none; border-radius: 999px; padding: 14px 28px; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase">Email me</a>
+      <a href="https://www.linkedin.com/in/karli-macrides-a6465b245/" target="_blank" rel="noopener" style="color: #EDE8E1; border: 1px solid #EDE8E1; text-decoration: none; border-radius: 999px; padding: 14px 28px; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase">LinkedIn</a>
+      <a href="assets/Karli-Macrides-Resume.pdf" target="_blank" rel="noopener" download="Karli-Macrides-Resume.pdf" style="color: #EDE8E1; border: 1px solid #EDE8E1; text-decoration: none; border-radius: 999px; padding: 14px 28px; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase">Résumé (PDF)</a>
+    </div>
+    <p style="margin: 96px 0 0; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9E978E">© 2026 Karli Macrides · Buffalo, NY</p>
+  </footer>
+</div>
 <script>
-    const resumeDataSource = "embedded-html-profile";
-    const resumePdfPath = "./Karli_Macrides_Resume.pdf";
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const profile = {
-      goals: [
-        "Expand proficiency in Excel and AI tools to enhance data analysis and create impactful, data-driven presentations",
-        "Use technology to improve workflow efficiency, streamline communication, and deliver actionable insights",
-        "Build professional relationships across business units and organizational levels",
-        "Continue learning about Citi, Controllers, Banking, Services, and other business functions"
-      ],
-      qualities: [
-        "Adaptability",
-        "Communication and collaboration",
-        "Ownership",
-        "Process improvement",
-        "Curiosity",
-        "Attention to detail",
-        "Organization",
-        "Professionalism"
-      ],
-      accomplishments: [
-        "Built early-career experience through internships in financial analysis, lending, accounting, human resources, operations, and digital media",
-        "Maintained strong academic performance while transferring between universities",
-        "Supported Citi's Banking and Services Financial Controllers team",
-        "Analyzed approximately 75,000 accounting entries across about 200 function leads",
-        "Selected the highest-volume function lead for a pilot review and created a standardized template model",
-        "Integrated a new ownership-assignment model using existing and historical entries",
-        "Developed a repeatable pilot process by testing a complex review with one key manager before expanding it",
-        "Worked with large, complex datasets to identify mismatches, matches, gaps, and key regional managers",
-        "Collaborated with managers and team members to understand posting adjustments, ownership decisions, and project implications"
-      ],
-      lessons: [
-        "Break large and complex problems into smaller, manageable steps",
-        "Start with a pilot, learn from it, and then scale the process",
-        "Do not only bring a problem—bring possible solutions and explain what has already been tried",
-        "Ask questions, seek feedback, and communicate early",
-        "Build a foundation so a process can be repeated by the team in the future"
-      ],
-      future: [
-        "Continue developing Excel, AI, automation, and presentation skills",
-        "Apply process-improvement methods to future finance work",
-        "Build strong relationships and learn from professionals across different levels",
-        "Use data and technology to make financial information easier to understand"
-      ],
-      evidence: {
-        "Financial analysis": [
-          "Supported Citi's Banking and Services Financial Controllers team",
-        "Analyzed approximately 75,000 accounting entries across about 200 function leads",
-        "Selected the highest-volume function lead for a pilot review and created a standardized template model",
-        "Integrated a new ownership-assignment model using existing and historical entries",
-          "Reviewed client financial statements to evaluate repayment risk",
-          "Completed balance-sheet reconciliations and year-end close support"
-        ],
-        "Excel and data": [
-          "Used Excel and Citi AI tools to organize and analyze approximately 75,000 accounting entries",
-          "Worked with large datasets to identify matches, mismatches, gaps, and key managers",
-          "Uses Excel and data-driven presentations to organize and communicate insights",
-          "Interested in automation and improving workflows with AI tools"
-        ],
-        "Process improvement": [
-          "Selected the highest-volume function lead for a pilot review before scaling the process",
-          "Created a standardized ownership-review template that can be replicated across Citi",
-          "Built the foundation for a repeatable future process",
-          "Improved handbook clarity, website navigation, and administrative workflows"
-        ],
-        "Communication": [
-          "Collaborated with professionals across multiple organizational levels to gather requirements and validate assumptions",
-          "Collaborated with managers and team members to understand technical project implications",
-          "Presented findings and organized information for stakeholders",
-          "Coordinated interviews and supported project managers"
-        ],
-        "Ownership": [
-          "Takes initiative to identify solutions before asking for help",
-          "Seeks opportunities to improve processes",
-          "Managed detailed deliverables and deadlines across several roles"
-        ],
-        "Adaptability": [
-          "Worked across finance, accounting, lending, HR, operations, and digital media",
-          "Transferred schools while continuing academic and professional growth",
-          "Learned multiple systems including LeasePath CRM, GoFileRoom, Practice CS, WordPress, and AI tools"
-        ],
-        "Leadership": [
-          "Contributed to fundraising efforts that raised more than $100,000 as a group",
-          "Helped build repeatable processes for future team use",
-          "Served as a resource for project managers"
-        ],
-        "Credit and lending": [
-          "Researched state usury laws and interest-rate limits",
-          "Prepared loan files, credit applications, title packages, and collateral documentation",
-          "Tracked collateral and reviewed repayment risk"
-        ]
-      }
-    };
-
-    const categories = {
-      "Financial analysis": ["financial", "finance", "accounting", "controller", "reporting", "reconciliation", "variance", "forecast", "budget"],
-      "Excel and data": ["excel", "data", "analysis", "dashboard", "pivot", "report", "powerpoint", "presentation"],
-      "Process improvement": ["process improvement", "streamline", "efficiency", "automation", "optimize", "continuous improvement"],
-      "Communication": ["communication", "stakeholder", "presentation", "collaboration", "cross-functional", "written", "verbal"],
-      "Ownership": ["ownership", "initiative", "self-starter", "problem solving", "independent"],
-      "Adaptability": ["adaptable", "adaptability", "fast-paced", "learn quickly", "flexible"],
-      "Leadership": ["leadership", "lead", "team", "mentor", "influence"],
-      "Credit and lending": ["credit", "lending", "loan", "underwriting", "risk", "collateral", "repayment"]
-    };
-
-    document.getElementById("jobFile").addEventListener("change", function(event) {
-      const file = event.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = e => document.getElementById("jobPosting").value = e.target.result;
-      reader.onerror = () => alert("This file could not be read. Please paste the posting instead.");
-      reader.readAsText(file);
+(function () {
+  const P = [
+      { title: 'What is HTML?', lead: 'Building a webpage is like building a house. Try the doorbell and light switch on the third house.', tiles: [
+        { h: 'HTML', p: 'The frame: the structure behind the scenes.' },
+        { h: 'CSS', p: 'The paint and decorations you actually see.' },
+        { h: 'JavaScript', p: 'The electricity: it rings the doorbell and flips the lights.' } ] },
+      { title: 'How AI codes for you', lead: 'AI is the chef. You order in plain English, and it writes all the code.', tiles: [
+        { h: 'Live demo', p: '“Build a simple card showing our quarterly profit.”' },
+        { h: 'Live demo', p: '“Build a button that celebrates when clicked.”' } ] },
+      { title: 'What can you use it for?', lead: 'HTML files aren’t just websites. They can be simple tools that automate daily work.', tiles: [
+        { h: 'Cleaning data', p: 'Upload a large Excel file and view it in a cleaner format.' },
+        { h: 'Spot-the-difference', p: 'Flag mismatches, duplicates and missing data.' },
+        { h: 'Dashboards & checklists', p: 'KPIs, charts and interactive to-do lists.' } ] },
+      { title: 'Saving data', lead: 'A basic HTML file is like a whiteboard: close it, and everything is erased unless you tell AI how to save it.', tiles: [
+        { h: 'Fresh Start', p: 'Wiped clean each time; safest for sensitive data.' },
+        { h: 'Remember Me', p: 'A sticky note saved in your browser.' },
+        { h: 'Download a Copy', p: 'A picture of the whiteboard as a new file.' },
+        { h: 'Team Share', p: 'One shared whiteboard, like a SharePoint List.' } ] },
+      { title: 'Testing', lead: 'Before sharing, make sure every button works and everything displays correctly.', tiles: [
+        { h: 'Something off?', p: 'Just tell AI, and it creates an updated version.' } ] },
+      { title: 'Friendly advice', lead: 'Talk to AI like it’s your friend. Give feedback instead of starting over.', tiles: [
+        { h: 'Try asking', p: '“Can you make this page more interactive?”' },
+        { h: 'Or', p: '“Can you make this button blue instead?”' } ] },
+      { title: 'How I built this', lead: 'This presentation didn’t come from one perfect prompt. It went through several versions.', tiles: [
+        { h: 'Simplified', p: 'Swapped technical terms for the house, chef and whiteboard analogies.' },
+        { h: 'Layered in', p: 'Interactive demos, prompt examples, Q&A and animations.' } ] }
+    ];
+  var i = 0, lights = false, ac = null, ringT = null;
+  var $ = function (id) { return document.getElementById(id); };
+  var nav = $('wt-nav');
+  var base = 'display: flex; gap: 10px; align-items: baseline; width: 100%; min-height: 44px; padding: 10px 12px; border: none; border-radius: 10px; text-align: left; font-family: inherit; font-size: 14px; cursor: pointer; ';
+  P.forEach(function (p, k) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.innerHTML = '<span style="font-family: \'Cormorant Garamond\', serif; font-size: 17px; width: 20px; flex: none"></span><span></span>';
+    b.children[0].textContent = k + 1; b.children[1].textContent = p.title;
+    b.addEventListener('click', function () { show(k); });
+    nav.appendChild(b);
+  });
+  function show(k) {
+    i = (k + P.length) % P.length;
+    Array.prototype.forEach.call(nav.children, function (b, n) {
+      b.setAttribute('style', base + (n === i ? 'background: #1F1E1D; color: #EDE8E1;' : 'background: transparent; color: #1C1B1A;'));
+      if (n === i) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
     });
-
-    function esc(value) {
-      return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
-    }
-
-    function analyzeJob() {
-      const posting = document.getElementById("jobPosting").value.trim();
-      const box = document.getElementById("jobResults");
-      if (!posting) {
-        box.innerHTML = "<strong>Please paste or upload a job posting first.</strong>";
-        box.classList.add("visible");
-        return;
-      }
-
-      const lower = posting.toLowerCase();
-      const matches = Object.entries(categories)
-        .map(([name, words]) => ({name, hits: words.filter(w => lower.includes(w))}))
-        .filter(item => item.hits.length);
-
-      const score = Math.min(95, 42 + matches.length * 7);
-      let output = `<div class="match-score">${score}% match</div>`;
-      output += `<p><strong>Best-aligned qualities:</strong> ${esc(matches.map(m => m.name).join(", ") || "General finance and business experience")}</p>`;
-      output += "<h4>Why Karli may be qualified</h4><ul>";
-
-      matches.forEach(match => {
-        const reasons = profile.evidence[match.name] || [];
-        output += `<li><strong>${esc(match.name)}:</strong> ${esc(reasons.join("; "))}</li>`;
-      });
-      output += "</ul>";
-
-      output += "<h4>Strong positioning statement</h4>";
-      output += `<div class="answer-card">I bring a combination of finance experience, adaptability, communication, ownership, and process improvement. At Citi, I supported the Banking and Services Financial Controllers team, used Citi AI tools and Excel, and analyzed approximately 75,000 accounting entries across about 200 function leads. I have also reviewed financial statements in lending, completed accounting reconciliations, managed detailed bid and loan documentation, and used technology to improve how information is organized and presented. I also selected the highest-volume function lead for a pilot review and helped create a standardized ownership-assignment template that can be replicated across Citi. My experience shows that I can learn quickly, break down complex problems, validate assumptions with stakeholders, and create repeatable solutions that support broader objectives.</div>`;
-
-      output += "<h4>Important reminder</h4><p>This tool identifies transferable strengths. Review the posting carefully and do not claim any technical qualification or experience that is not already true.</p>";
-
-      box.innerHTML = output;
-      box.classList.add("visible");
-    }
-
-    function classify(q) {
-      q = q.toLowerCase();
-      if (q.includes("tell me about yourself") || q.includes("walk me through")) return "intro";
-      if (q.includes("why") && (q.includes("role") || q.includes("company") || q.includes("interested"))) return "why";
-      if (q.includes("strength")) return "strength";
-      if (q.includes("weakness")) return "weakness";
-      if (q.includes("challenge") || q.includes("difficult") || q.includes("problem")) return "challenge";
-      if (q.includes("team") || q.includes("collaborat")) return "team";
-      if (q.includes("lead") || q.includes("initiative") || q.includes("ownership")) return "leadership";
-      if (q.includes("goal") || q.includes("future")) return "goals";
-      if (q.includes("learn") || q.includes("takeaway") || q.includes("lesson")) return "lesson";
-      if (q.includes("excel") || q.includes("data") || q.includes("technical") || q.includes("ai")) return "technical";
-      return "general";
-    }
-
-    function answer(type, target) {
-      const role = target ? ` for the ${target} role` : "";
-      const answers = {
-        intro: `I am a finance student at Binghamton University graduating in May 2027, with experience across financial analysis, lending, accounting, bid administration, human resources, and digital media. Most recently, I worked on Citi's Banking and Services Financial Controllers team, where I used Citi AI tools and Excel to improve workflow efficiency and analyze approximately 75,000 accounting entries across about 200 function leads. I collaborated with professionals across multiple organizational levels to gather requirements, validate assumptions, and strengthen the analysis. I also selected the highest-volume function lead for a pilot review and helped create a standardized ownership-assignment template that can be replicated across Citi. That experience strengthened my skills in financial analysis, process improvement, communication, and working through complex organizational change.`,
-        why: `I am interested in this opportunity because it aligns with my goal of building a career in finance while continuing to strengthen my analytical and communication skills. My experience at Citi, Targeted Lending, and The ZLC Group CPAs gave me exposure to financial controlling, credit review, reconciliations, documentation, and stakeholder support. I would be excited to bring that foundation${role}, learn from the team, and contribute through curiosity, accuracy, ownership, and a process-improvement mindset.`,
-        strength: `One of my strongest qualities is adaptability. I have worked across financial controlling, lending, accounting, human resources, operations, and digital media. Each role required me to learn new systems, understand different types of information, and communicate with different people. That experience has made me comfortable learning quickly, asking thoughtful questions, and taking ownership of unfamiliar work.`,
-        weakness: `An area I continue to work on is balancing attention to detail with speed. Because I care about accuracy, I can sometimes spend too much time reviewing smaller details. I have improved by setting clear review points, prioritizing the highest-risk items, and using organized checklists. This helps me maintain quality while working more efficiently.`,
-        challenge: `During my Citi internship, I worked on a project involving approximately 75,000 accounting entries across about 200 function leads. The goal was to identify Banking and Services Financial Controllers segment activity and determine where entries should be assigned within a new centralized organizational structure. Instead of attempting to review every function lead at once, I analyzed the transaction volumes and selected the highest-volume lead for a pilot review. I used existing and historical entries to help integrate a new ownership-assignment model, collaborated with professionals across multiple levels to validate assumptions, and reviewed the target model to clarify roles and responsibilities across controller functions. The pilot created a standardized template that can be replicated across Citi and taught me how to break down a large, complex problem into a scalable process.`,
-        team: `At Citi, I collaborated with professionals across multiple organizational levels to gather requirements, validate assumptions, and better understand how accounting entries should be assigned within a centralized controller structure. Because the project involved about 75,000 entries and around 200 function leads, clear communication was essential. I organized the data, asked targeted questions, and used feedback from managers and team members to strengthen the financial analysis and clarify ownership responsibilities.`,
-        leadership: `I show leadership through ownership, structure, and initiative. During my Citi project, I analyzed transaction activity across about 200 function leads and selected the highest-volume lead for a pilot review instead of trying to address the entire population at once. I helped integrate a new ownership-assignment model, validated assumptions with stakeholders, and created a standardized template that can support future reviews across Citi. That experience showed me how to lead a process by bringing structure to ambiguity and building something others can reuse.`,
-        goals: `My goals are to continue improving my Excel, AI, automation, and presentation skills so I can analyze information more efficiently and communicate clearer insights. I also want to keep building relationships across business units and organizational levels. Long term, I want to combine finance, technology, and process improvement to make complex information easier for stakeholders to understand and act on.`,
-        lesson: `One of my biggest lessons is that the best way to solve a large, complex problem is not to attack everything at once. It is more effective to break the problem into smaller parts, test an approach, learn from feedback, and then scale it. I also learned not to only bring a problem to someone. I should explain what I have already tried, offer possible solutions, and ask for targeted guidance.`,
-        technical: `My technical experience includes Excel, PowerPoint, Word, WordPress, LeasePath CRM, GoFileRoom, Practice CS, and AI platforms such as OpenAI, Anthropic, Gemini, Copilot, and Citi AI tools. At Citi, I used AI tools and Excel to organize and analyze approximately 75,000 accounting entries across about 200 function leads, improve workflow efficiency, and support a new ownership-assignment model. I am especially interested in combining financial analysis, automation, and clear presentations to make complex information easier for stakeholders to understand and act on.`,
-        general: `A strong answer from my background would connect the question to my experience in financial controlling, lending, accounting, operations, or process improvement. I would explain the situation, the specific action I took, the result or lesson, and how that experience would help me contribute${role}.`
-      };
-      return answers[type];
-    }
-
-    function buildInterviewAnswers() {
-      const raw = document.getElementById("interviewQuestions").value.trim();
-      const target = document.getElementById("targetRole").value.trim();
-      const box = document.getElementById("interviewResults");
-
-      if (!raw) {
-        box.innerHTML = "<strong>Please enter at least one interview question.</strong>";
-        box.classList.add("visible");
-        return;
-      }
-
-      const questions = raw.split(/\n+/).map(q => q.trim()).filter(Boolean);
-      let output = "<h4>Suggested answers</h4>";
-
-      questions.forEach((q, index) => {
-        const generated = answer(classify(q), target);
-        output += `<div class="answer-card"><strong>${esc(q)}</strong><br><br>${esc(generated)}<br><button class="copy-button" type="button" onclick="copyAnswer(${index})">Copy answer</button></div>`;
-      });
-
-      box.innerHTML = output;
-      box.classList.add("visible");
-      window.generatedAnswers = questions.map(q => answer(classify(q), target));
-    }
-
-    function copyAnswer(index) {
-      navigator.clipboard.writeText(window.generatedAnswers[index]).then(() => alert("Answer copied."));
-    }
-
-    function clearJobTool() {
-      document.getElementById("jobPosting").value = "";
-      document.getElementById("jobFile").value = "";
-      document.getElementById("jobResults").classList.remove("visible");
-    }
-
-    function clearInterviewTool() {
-      document.getElementById("interviewQuestions").value = "";
-      document.getElementById("targetRole").value = "";
-      document.getElementById("interviewResults").classList.remove("visible");
-    }
-
-    function getApplicationMeta() {
-      return {
-        company: document.getElementById("targetRole")?.value.trim().split(" - ")[0] || "Untitled Company",
-        role: document.getElementById("targetRole")?.value.trim() || "Untitled Position",
-        status: "In progress",
-        interviewDate: "",
-        notes: ""
-      };
-    }
-
-    function slugify(value) {
-      return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "career-file";
-    }
-
-    async function downloadTextFile(filename, content, mimeType="text/html") {
-      const blob = new Blob([content], {type: mimeType});
-      const file = new File([blob], filename, {type: mimeType});
-
-      // On iPhone/iPad Safari, use the Share Sheet when file sharing is supported.
-      try {
-        if (navigator.canShare && navigator.canShare({files: [file]}) && navigator.share) {
-          await navigator.share({
-            files: [file],
-            title: filename
-          });
-          return;
-        }
-      } catch (error) {
-        if (error && error.name === "AbortError") return;
-      }
-
-      // Desktop and browser fallback.
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = filename;
-      link.style.display = "none";
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 2000);
-    }
-
-    function buildStandaloneFile(title, bodyContent, meta) {
-      return `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${esc(title)}</title>
-<style>
-body{font-family:Arial,sans-serif;max-width:900px;margin:40px auto;padding:0 22px;color:#1c2530;line-height:1.6}
-h1,h2,h3,h4{color:#0f2742}
-.meta{background:#eef5fa;border:1px solid #cfe1ee;border-radius:14px;padding:18px;margin:20px 0}
-.content{border:1px solid #dce5ec;border-radius:14px;padding:22px}
-.badge{display:inline-block;background:#0f2742;color:white;border-radius:999px;padding:7px 11px;font-weight:bold}
-pre{white-space:pre-wrap;font-family:inherit}
-small{color:#607080}
-</style>
-
-<style>
-:root{--paper:#f6f0e7;--ink:#211e1a;--cream:#fbf8f2;--muted:#746e66;--line:#2d2925}
-body{background:var(--paper)!important;color:var(--ink)!important;font-family:Georgia,"Times New Roman",serif!important;overflow-x:hidden}
-header{background:rgba(246,240,231,.94)!important;border-bottom:1px solid rgba(45,41,37,.25)!important}
-.brand,.nav-links a,.section-number{letter-spacing:.08em;text-transform:uppercase}
-h1,h2,h3{font-weight:500!important}
-h1{font-size:clamp(4rem,9vw,8rem)!important;line-height:.9!important;letter-spacing:-.05em!important}
-.script-word{display:block;font-family:"Brush Script MT","Segoe Script",cursive;font-size:.55em;font-weight:400;transform:rotate(-3deg);margin-bottom:8px}
-.button,.mini-button,.copy-button{border-radius:0!important;border:1px solid var(--line)!important;background:transparent!important;color:var(--ink)!important;text-transform:uppercase;letter-spacing:.07em}
-.button.primary{background:var(--ink)!important;color:var(--cream)!important}
-.profile-card,.about-card,.experience-card,.skill-card,.info-card,.leadership-item,.tool-card,.dashboard-panel,.saved-item,.contact-card{background:rgba(251,248,242,.78)!important;border:1px solid var(--line)!important;border-radius:0!important;box-shadow:8px 8px 0 rgba(45,41,37,.07)!important}
-.tag,.status-pill,input,textarea{border-radius:0!important}
-.staircase{position:absolute;right:-20px;top:100px;width:280px;height:760px;opacity:.45;pointer-events:none;z-index:0}
-.sketch-line{fill:none;stroke:var(--line);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.city-scene{position:relative;height:410px;overflow:hidden;border-top:1px solid var(--line);margin-top:40px}
-.city-scene>svg{width:100%;height:100%}
-.road{position:absolute;left:0;right:0;bottom:38px;height:2px;background:var(--line)}
-.car{position:absolute;bottom:40px;width:110px;height:48px;animation:drive 14s linear infinite}
-.car.two{animation-duration:18s;animation-delay:-7s;width:95px;bottom:48px}
-.car.three{animation-duration:22s;animation-delay:-14s;width:120px;bottom:44px}
-.car svg{width:100%;height:100%}
-@keyframes drive{from{transform:translateX(-160px)}to{transform:translateX(calc(100vw + 180px))}}
-@media(max-width:850px){.staircase{opacity:.2;right:-130px}.city-scene{height:330px}}
-@media(prefers-reduced-motion:reduce){.car{animation:none}}
-</style>
-
-
-<style id="cream-readability-overrides">
-:root{
-  --paper:#f6efe5 !important;
-  --cream:#fbf7f1 !important;
-  --white:#fbf7f1 !important;
-  --text:#000000 !important;
-  --ink:#000000 !important;
-  --muted:#2c2c2c !important;
-  --line:#000000 !important;
-}
-html,body{
-  background:var(--paper)!important;
-  color:#000!important;
-}
-body{
-  font-family:Arial,Helvetica,sans-serif!important;
-}
-h1,h2,h3,h4{
-  font-family:Georgia,"Times New Roman",serif!important;
-  color:#000!important;
-}
-p,li,label,small,span{
-  color:#222!important;
-}
-header{
-  background:rgba(246,239,229,.94)!important;
-}
-.profile-card,.about-card,.experience-card,.skill-card,.info-card,
-.tool-card,.dashboard-panel,.saved-item,.contact-card,.answer-card,
-.result-box{
-  background:var(--cream)!important;
-  border:1.5px solid #000!important;
-  box-shadow:8px 8px 0 rgba(0,0,0,.06)!important;
-}
-.button,.mini-button,.copy-button{
-  background:var(--cream)!important;
-  color:#000!important;
-  border:1.5px solid #000!important;
-}
-.button:hover,.mini-button:hover,.copy-button:hover{
-  background:#000!important;
-  color:#fbf7f1!important;
-}
-.button.primary{
-  background:#000!important;
-  color:#fbf7f1!important;
-}
-textarea,input{
-  background:#fffdf9!important;
-  color:#000!important;
-  border:1.5px solid #000!important;
-}
-.nyc-bottom-city{
-  background:var(--paper)!important;
-}
-</style>
-
-
-<style id="citi-divider-style">
-.citi-divider{
-text-align:center;
-margin:22px 0 14px;
-letter-spacing:.08em;
-color:#666;
-font-size:.95rem;
-}
-.experience-card ul li{margin-bottom:14px;}
-.project-open-button{display:block;margin:0 auto;}
-</style>
-
-</head>
-<body>
-<h1>${esc(title)}</h1>
-<div class="meta">
-<strong>Company:</strong> ${esc(meta.company)}<br>
-<strong>Position:</strong> ${esc(meta.role)}<br>
-<strong>Status:</strong> ${esc(meta.status)}<br>
-<strong>Interview date/deadline:</strong> ${esc(meta.interviewDate || "Not entered")}<br>
-<strong>Saved:</strong> ${new Date().toLocaleString()}<br>
-<strong>Notes:</strong><br>${esc(meta.notes || "No notes entered")}
-</div>
-<div class="content">${bodyContent}</div>
-
-<div id="resumeModal" class="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resumeTitle">
-  <div class="resume-paper">
-    <div class="resume-actions">
-      <button type="button" onclick="printResume()">Print / Save as PDF</button>
-      <button type="button" onclick="closeResume()">Close</button>
-    </div>
-
-    <div class="resume-header">
-      <h2 id="resumeTitle">Karli Macrides</h2>
-      <div class="resume-contact">
-        (716) 725-8897 | kmacrides4@gmail.com | Buffalo, NY
-      </div>
-    </div>
-
-    <section class="resume-section">
-      <h3>Education and Honors</h3>
-      <div class="resume-entry">
-        <div class="resume-entry-head">
-          <div>
-            <div class="resume-entry-title">Binghamton University, State University of New York</div>
-            <div>School of Management</div>
-            <div>Bachelor of Science in Business Administration, Concentration in Finance</div>
-          </div>
-          <div class="resume-entry-meta">Binghamton, NY<br>Expected May 2027</div>
-        </div>
-      </div>
-      <div class="resume-entry">
-        <div class="resume-entry-head">
-          <div>
-            <div class="resume-entry-title">University of Tennessee Knoxville</div>
-            <div>Haslam College of Business</div>
-            <div>Bachelor of Arts in Finance</div>
-          </div>
-          <div class="resume-entry-meta">Knoxville, TN<br>August 2023 – May 2024</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="resume-section">
-      <h3>Professional Experience</h3>
-
-      <div class="resume-entry">
-        <div class="resume-entry-head">
-          <div><div class="resume-entry-title">Financial Analyst Intern — Citi</div><div>Banking and Services Financial Controllers Team</div></div>
-          <div class="resume-entry-meta">Buffalo, NY<br>June 2026 – August 2026</div>
-        </div>
-        <ul>
-          <li>Supported the Enterprise Financial Controllers build-out by analyzing, profiling, and consolidating ledger adjustments to support Citi’s transition to a centralized and controlled operating model.</li>
-          <li>Leveraged Citi AI tools and Microsoft Excel to improve workflow efficiency, organize complex financial data, and support financial analysis.</li>
-          <li>Collaborated with professionals across organizational levels to learn about their roles, shadow responsibilities, and understand Citi’s matrixed business structure.</li>
-          <li>Analyzed approximately 75,000 accounting entries across 200 function leads to develop a standardized ownership-assignment model.</li>
-          <li>Developed advanced data analysis, data organization, and problem-solving skills through hands-on execution.</li>
-        </ul>
-      </div>
-
-      <div class="resume-entry">
-        <div class="resume-entry-head">
-          <div><div class="resume-entry-title">Bid Administrator — Hohl Industrial Services</div></div>
-          <div class="resume-entry-meta">Tonawanda, NY<br>December 2025 – February 2026</div>
-        </div>
-        <ul>
-          <li>Managed the timely and accurate delivery of bid proposals to existing and prospective clients.</li>
-          <li>Acted as a resource for project managers.</li>
-        </ul>
-      </div>
-
-      <div class="resume-entry">
-        <div class="resume-entry-head">
-          <div><div class="resume-entry-title">Finance Intern — Targeted Lending Co.</div></div>
-          <div class="resume-entry-meta">Williamsville, NY<br>May 2025 – August 2025</div>
-        </div>
-        <ul>
-          <li>Researched state-by-state usury laws, maximum interest-rate limits, and differences between business and consumer lending.</li>
-          <li>Prepared loan files, credit applications, title packages, and collateral documentation.</li>
-          <li>Tracked collateral status and managed loan documentation using LeasePath CRM.</li>
-          <li>Assisted in reviewing client financial statements to evaluate repayment risk.</li>
-        </ul>
-      </div>
-
-      <div class="resume-entry">
-        <div class="resume-entry-head">
-          <div><div class="resume-entry-title">Accounting Intern — The ZLC Group CPAs</div></div>
-          <div class="resume-entry-meta">Amherst, NY<br>May 2024 – August 2024</div>
-        </div>
-        <ul>
-          <li>Conducted balance-sheet reconciliations, supported year-end close, and processed accounts payable transactions.</li>
-          <li>Used GoFileRoom and Practice CS to maintain organized financial records.</li>
-        </ul>
-      </div>
-
-      <div class="resume-entry">
-        <div class="resume-entry-head">
-          <div><div class="resume-entry-title">Social Media and Website Administrator — Orange Crush Buffalo Lacrosse</div></div>
-          <div class="resume-entry-meta">Remote<br>May 2024 – August 2024</div>
-        </div>
-        <ul>
-          <li>Created and managed the organization’s Instagram account to increase visibility and engagement.</li>
-          <li>Designed and managed the organization’s WordPress website to improve user experience and navigation.</li>
-        </ul>
-      </div>
-
-      <div class="resume-entry">
-        <div class="resume-entry-head">
-          <div><div class="resume-entry-title">Human Resources Intern — Hohl Industrial Services</div></div>
-          <div class="resume-entry-meta">Tonawanda, NY<br>June 2022 – August 2022</div>
-        </div>
-        <ul>
-          <li>Updated and redesigned the employee handbook to improve policy clarity.</li>
-          <li>Set up and facilitated more than 10 job interviews through posting, screening, and scheduling support.</li>
-          <li>Organized W-2 forms, I-9s, and other employee onboarding documentation.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="resume-section">
-      <h3>Leadership Experience</h3>
-      <div class="resume-entry">
-        <div class="resume-entry-head">
-          <div><div class="resume-entry-title">Zeta Tau Alpha — Member</div></div>
-          <div class="resume-entry-meta">Knoxville, TN<br>August 2023 – May 2024</div>
-        </div>
-        <ul>
-          <li>Organized and participated in fundraising events, contributing more than 20 hours per semester and helping raise over $100,000 as a group.</li>
-          <li>Collaborated with members during weekly chapter meetings to plan events and strengthen community engagement.</li>
-        </ul>
-      </div>
-
-      <div class="resume-entry">
-        <div class="resume-entry-head">
-          <div><div class="resume-entry-title">Women in Finance and Women of Haslam — Member</div></div>
-          <div class="resume-entry-meta">Knoxville, TN<br>August 2023 – May 2024</div>
-        </div>
-        <ul>
-          <li>Attended finance-focused meetings, speaker events, professional-development activities, and networking opportunities.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="resume-section">
-      <h3>Additional Information</h3>
-      <p><strong>Technical Skills:</strong> Microsoft PowerPoint, Excel, Word, WordPress, LeasePath CRM, GoFileRoom, Practice CS, and AI platforms including OpenAI, Anthropic, Gemini, Copilot, and Citi AI tools.</p>
-      <p><strong>Interests:</strong> Interior design, fashion, and sewing.</p>
-    </section>
-  </div>
-</div>
-
-
-<script id="embedded-resume-script">
-function openResume(){
-  const modal=document.getElementById("resumeModal");
-  modal.classList.add("open");
-  document.body.style.overflow="hidden";
-}
-function closeResume(){
-  const modal=document.getElementById("resumeModal");
-  modal.classList.remove("open");
-  document.body.style.overflow="";
-}
-function printResume(){
-  document.body.classList.add("printing-resume");
-  window.print();
-  setTimeout(()=>document.body.classList.remove("printing-resume"),500);
-}
-document.addEventListener("keydown",function(e){
-  if(e.key==="Escape") closeResume();
-});
-document.getElementById("resumeModal")?.addEventListener("click",function(e){
-  if(e.target===this) closeResume();
-});
-</script>
-<div aria-labelledby="citiProjectTitle" aria-modal="true" class="case-study-modal" id="citiProjectModal" role="dialog">
-<article class="case-study-paper">
-<div class="case-study-actions">
-<button onclick="closeCitiProject()" type="button">Close</button>
-</div>
-<div class="case-study-kicker">Citi · Banking &amp; Services Financial Controllers</div>
-<h2 id="citiProjectTitle">Enterprise Financial Controllers Build-Out</h2>
-<p class="case-study-intro">
-      Supported Citi’s transition from a decentralized, high-risk manual reporting structure
-      to a centralized, controlled, and efficient Enterprise Financial Controllers operating model
-      by analyzing ledger-adjustment activity and building a repeatable ownership-review framework.
-    </p>
-<div class="case-metrics">
-<div class="case-metric"><strong>75,000</strong>Accounting entries analyzed</div>
-<div class="case-metric"><strong>200</strong>Function leads profiled</div>
-<div class="case-metric"><strong>1</strong>Highest-volume pilot</div>
-<div class="case-metric"><strong>EFC</strong>Centralized model supported</div>
-</div>
-<section class="case-section">
-<h3>Objective</h3>
-<p>
-        Determine where ledger adjustments should be owned within the new centralized controller
-        structure and create a standardized process that could support broader ownership reviews.
-      </p>
-</section>
-<section class="case-section">
-<h3>My Process</h3>
-<div class="process-timeline">
-<div class="process-step">
-<div class="process-number">1</div>
-<div class="process-copy"><h4>Organized the data</h4><p>Consolidated and structured ledger-adjustment information for analysis.</p></div>
-</div>
-<div class="process-step">
-<div class="process-number">2</div>
-<div class="process-copy"><h4>Profiled activity</h4><p>Analyzed transaction volume and activity across approximately 200 function leads.</p></div>
-</div>
-<div class="process-step">
-<div class="process-number">3</div>
-<div class="process-copy"><h4>Selected the pilot</h4><p>Identified the function lead with the highest transaction volume for a focused review.</p></div>
-</div>
-<div class="process-step">
-<div class="process-number">4</div>
-<div class="process-copy"><h4>Compared ownership models</h4><p>Compared existing and historical entry ownership with the new centralized EFC structure.</p></div>
-</div>
-<div class="process-step">
-<div class="process-number">5</div>
-<div class="process-copy"><h4>Validated assumptions</h4><p>Collaborated with controller professionals across organizational levels to confirm roles and responsibilities.</p></div>
-</div>
-<div class="process-step">
-<div class="process-number">6</div>
-<div class="process-copy"><h4>Built the template</h4><p>Created a standardized ownership-assignment model and repeatable framework for future reviews.</p></div>
-</div>
-</div>
-</section>
-<section class="case-section">
-<h3>Tools and Capabilities</h3>
-<div class="case-tag-list">
-<span>Microsoft Excel</span>
-<span>Citi AI tools</span>
-<span>Financial controls</span>
-<span>Data analysis</span>
-<span>Process improvement</span>
-<span>Stakeholder collaboration</span>
-</div>
-</section>
-<section class="case-section">
-<h3>Results</h3>
-<div class="case-result-grid">
-<div class="case-result"><strong>Large-scale review</strong>Analyzed approximately 75,000 accounting entries.</div>
-<div class="case-result"><strong>Activity profiling</strong>Organized transaction activity across about 200 function leads.</div>
-<div class="case-result"><strong>Standardized model</strong>Created a consistent template for ownership assignment.</div>
-<div class="case-result"><strong>Repeatable framework</strong>Established an approach that can support future ownership reviews.</div>
-</div>
-</section>
-<section class="case-section">
-<h3>Skills Developed</h3>
-<div class="case-skill-grid">
-<div class="case-skill"><strong>Financial Controls</strong>Learned how ownership and reporting responsibilities intersect within a centralized control division.</div>
-<div class="case-skill"><strong>Large-Scale Data Analysis</strong>Worked hands-on with high-volume accounting data and complex organizational information.</div>
-<div class="case-skill"><strong>Process Improvement</strong>Turned a targeted pilot into a standardized, repeatable review framework.</div>
-<div class="case-skill"><strong>Matrixed Collaboration</strong>Learned from professionals across organizational levels and controller functions.</div>
-</div>
-</section>
-</article>
-</div>
-<script id="citi-case-study-script">
-  function openCitiProject() {
-    const modal = document.getElementById("citiProjectModal");
-    modal.classList.add("open");
-    document.body.style.overflow = "hidden";
+    $('wt-num').textContent = i + 1; $('wt-total').textContent = P.length;
+    $('wt-title').textContent = P[i].title; $('wt-lead').textContent = P[i].lead;
+    $('wt-house').hidden = i !== 0;
+    var tiles = $('wt-tiles'); tiles.hidden = i === 0; tiles.innerHTML = '';
+    P[i].tiles.forEach(function (t) {
+      var d = document.createElement('div');
+      d.setAttribute('style', 'background: #F4F0EA; border-radius: 12px; padding: 16px');
+      d.innerHTML = '<div style="font-family: \'Cormorant Garamond\', serif; font-size: 20px; line-height: 1.15"></div><div style="margin-top: 4px; font-size: 13px; color: #5A544D"></div>';
+      d.children[0].textContent = t.h; d.children[1].textContent = t.p;
+      tiles.appendChild(d);
+    });
   }
-
-  function closeCitiProject() {
-    const modal = document.getElementById("citiProjectModal");
-    modal.classList.remove("open");
-    document.body.style.overflow = "";
+  function setLights(on) {
+    lights = on;
+    document.querySelectorAll('.wt-win').forEach(function (w) { w.setAttribute('fill', on ? '#F6D77A' : '#3A3734'); });
+    $('wt-jscard').style.background = on ? '#F7EBC8' : '#F4F0EA';
+    $('wt-switch').setAttribute('y', on ? 130 : 134);
+    document.querySelectorAll('.wt-lightlabel').forEach(function (l) { l.textContent = on ? 'Lights off' : 'Lights on'; });
+    document.querySelectorAll('[data-act="lights"][aria-pressed]').forEach(function (b) { b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
   }
-
-  document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") closeCitiProject();
+  function ring() {
+    try {
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (AC) {
+        ac = ac || new AC();
+        [[659, 0], [523, 0.45]].forEach(function (n) {
+          var o = ac.createOscillator(), g = ac.createGain(), t0 = ac.currentTime + n[1];
+          o.type = 'sine'; o.frequency.value = n[0];
+          g.gain.setValueAtTime(0.0001, t0);
+          g.gain.exponentialRampToValueAtTime(0.25, t0 + 0.02);
+          g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.6);
+          o.connect(g); g.connect(ac.destination); o.start(t0); o.stop(t0 + 0.65);
+        });
+      }
+    } catch (e) {}
+    var ding = $('wt-ding'), bubble = ding.firstElementChild;
+    ding.hidden = false; $('wt-bell').setAttribute('fill', '#E8C66A');
+    var clone = bubble.cloneNode(true); ding.replaceChild(clone, bubble);
+    clearTimeout(ringT);
+    ringT = setTimeout(function () { ding.hidden = true; $('wt-bell').setAttribute('fill', '#F4F0EA'); }, 1400);
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-act]'); if (!b) return;
+    var a = b.getAttribute('data-act');
+    if (a === 'ring') ring(); else if (a === 'lights') setLights(!lights);
+    else if (a === 'prev') show(i - 1); else if (a === 'next') show(i + 1);
   });
-
-  document.getElementById("citiProjectModal")?.addEventListener("click", function(event) {
-    if (event.target === this) closeCitiProject();
-  });
-</script>
-
-<script id="interactive-portfolio-script">
-function showSkillDetail(el){
-  document.querySelectorAll('.tag[role="button"]').forEach(tag=>tag.classList.remove('active'));
-  el.classList.add('active');
-  const panel=document.getElementById('skillDetailPanel');
-  if(!panel) return;
-  panel.querySelector('h3').textContent=el.dataset.skill || 'Skill';
-  panel.querySelector('p').textContent=el.dataset.description || '';
-}
-
-function toggleNightMode(){
-  const enabled=document.body.classList.toggle('night-mode');
-  const button=document.querySelector('.moon-control');
-  if(button){
-    button.setAttribute('aria-pressed',String(enabled));
-    button.textContent=enabled?'☀':'☾';
-  }
-  localStorage.setItem('karliNightMode',enabled?'on':'off');
-}
-
-function toggleRecruiterMode(){
-  const enabled=document.body.classList.toggle('recruiter-mode');
-  const button=document.querySelector('.portfolio-controls .mode-control:first-child');
-  if(button){
-    button.setAttribute('aria-pressed',String(enabled));
-    button.textContent=enabled?'Full Portfolio':'Recruiter Mode';
-  }
-  if(enabled){
-    window.scrollTo({top:0,behavior:'smooth'});
-  }
-}
-
-document.addEventListener('DOMContentLoaded',()=>{
-  if(localStorage.getItem('karliNightMode')==='on'){
-    document.body.classList.add('night-mode');
-    const button=document.querySelector('.moon-control');
-    if(button){
-      button.setAttribute('aria-pressed','true');
-      button.textContent='☀';
-    }
-  }
-});
+  show(0);
+})();
 </script>
 </body>
 </html>
